@@ -19,7 +19,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("Market_Basket_Optimisation.csv", header= None)
+dataset = pd.read_csv("data/Market_Basket_Optimisation.csv", header= None)
 
 
 # Apriori algorithm expects list of lists as input and they must be strings
