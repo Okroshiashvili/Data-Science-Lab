@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 
 # Import the dataset
-dataset = pd.read_csv('Ads_CTR_Optimisation.csv')
+dataset = pd.read_csv('data/Ads_CTR_Optimisation.csv')
 
 #%%
 
