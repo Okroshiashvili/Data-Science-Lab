@@ -18,7 +18,7 @@ import pandas as pd
 
 # Importing the dataset
 
-dataset = pd.read_csv('data.csv')
+dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 3].values
 
@@ -114,6 +114,6 @@ y_train = sc_y.fit_transform(y_train)
 
 Please, note that the complexity of preprocessing and steps to do
 in this level is directly proportional to the how messy the data set is.
-Generally, 80% of effort is needed to clean the data and 20% in enough to build the model
+Generally, 80% of effort is needed to clean the data and 20% is enough to build the model
 
 """
