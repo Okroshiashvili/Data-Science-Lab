@@ -44,7 +44,7 @@ import pandas as pd
 
 
 # Importing the dataset
-dataset = pd.read_csv('Wine.csv')
+dataset = pd.read_csv('data/Wine.csv')
 
 # Independent variables
 X = dataset.iloc[:, 0:13].values
