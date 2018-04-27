@@ -21,9 +21,9 @@ import matplotlib.pyplot as plt
 
 # Open the dataset
 
-dataset = pd.read_csv('Restaurant_Reviews.tsv', delimiter = '\t', quoting = 3)
+dataset = pd.read_csv('data/Restaurant_Reviews.tsv', delimiter = '\t', quoting = 3)
 
-# quoting=3 ignores double quotes in the dataset as it can create some problems
+# "quoting=3" ignores double quotes in the dataset as it can create some problems
 # For NLP generally, it's better to use tab delimited file as comma separated values
 # CSV may arise some problems while reading file
  
