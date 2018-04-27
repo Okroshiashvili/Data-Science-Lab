@@ -150,3 +150,6 @@ classifier.fit_generator(training_set,
 # second is to add one more fully connected layer
 # If we want even better accuracy we have to increase target_size parameter
 
+"""
+Data file for the CNN was too large to upload. You can download it from the following links:[ https://www.kaggle.com/c/dogs-vs-cats/data ]
+or [ https://www.microsoft.com/en-us/download/details.aspx?id=54765 ]
