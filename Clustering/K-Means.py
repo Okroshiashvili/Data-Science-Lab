@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 
 # Import the dataset
-dataset = pd.read_csv('Mall_Customers.csv')
+dataset = pd.read_csv('data/Mall_Customers.csv')
 
 
 # Create independent variable
