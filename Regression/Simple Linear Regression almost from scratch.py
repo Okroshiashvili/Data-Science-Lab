@@ -72,7 +72,7 @@ def des_stat(arr):
 
 
 des_stat(X)
-    
+des_stat(Y)   
 
 """ 
 As stated above we have to estimate parameters, beta_0 and beta_1 in such a
