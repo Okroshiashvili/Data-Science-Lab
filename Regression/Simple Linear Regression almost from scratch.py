@@ -160,6 +160,7 @@ def predict(X, Y, df):
     stdv_X = (sum([(X[i] - mean_X)**2 for i in range(len(X))]) / (len(X) - 1))**0.5
     stdv_Y = (sum([(Y[i] - mean_Y)**2 for i in range(len(Y))]) / (len(Y) - 1))**0.5
     corr = covariance / (stdv_X * stdv_Y)
+    # R_squared = corr**2
     
     # Calculate leverage and influence
     leverage = (1 / (len(X)-1)) * np.array([((X[i] - mean_X)/stdv_X)**2 for i in range(len(X))]) + (1/len(X))
@@ -303,7 +304,6 @@ res_plot()
 
 #############################################
 
-
 """
 Q-Q Plot for residuals
 
@@ -316,5 +316,3 @@ def qq_plot():
     plt.show()    
  
 qq_plot()
-
-
