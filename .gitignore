@@ -1,0 +1,7 @@
+.ipynb_checkpoint
+.pyc
+.spyderproject
+.spyproject
+*.py[cod]
+*$py.class
+
