@@ -1,15 +1,35 @@
 # Machine-Learning-Deep-Learning
-In this repo I put some Machine Learning and Deep Learning algorithms.
-Some of them comes from various MOOCs and some of them is my work.
-From time to time I'll add some contents and improve existing ones.
+In this repository, I put some Machine Learning and Deep Learning algorithms.
+Some of them come from various MOOCs and some of them are my work.
 
-### My aim is twofold
-* Keep my work and access it from everywhare
-* The most important to help somehow Data Science enthusiast to catch algorithm relatively easily.
 
-One can download the repository and in spyder or other favorite IDE set working directory to that folder. 
-Datasets are in each folder. These are really really toy datasets, just for learning purposes. While updating the content
-of this repo I'll add some specific as well as general datasets
+### Aim
+
+The goal of this repository is to help aspiring data scientists to understand what happens behind the code and don't blindly copy paste it. I've done this with extensive comments in code files.
+I tried to be as detailed as possible, but surely, some googling will also help.
+
+
+### How to use
+
+You can clone the repository and in spyder or in your other favorite IDE set the working directory to that folder. 
+Datasets are in each folder, except for convolutional Neural Networks, for which you can dounload data from provided link in code file. These are really toy datasets, just for learning purposes. I do hope it will make a difference.
+
+
+### Major Update
+
+In 26-Jan-2019 repo got some major updates.
+
+* Separated ML and DL algorithms in different folders
+* Added more comments in each code file
+* Extended DL with supervised and unsupervised algorithms
+* Easily generalizable code for other datasets
+
+### To Do
+
+* Add more intuitions for each algorithm and problem
+* Add some more algorithms such as
 
 
 #### Contributors are warmly welcomed
+
+
