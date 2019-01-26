@@ -1,15 +1,18 @@
 """
-Created on Thu Mar 29 20:31:35 2018
+Created on Thu Mar 29 2018
 
-@author: Nodar.Okroshiashvili
+@author: Nodar Okroshiashvili
 """
+
+
+
 
 """
 XGBoost
 
 """
 
-#%%
+
 
 # Data Preprocessing
 
@@ -27,10 +30,9 @@ X = dataset.iloc[:, 3:13].values
 y = dataset.iloc[:, 13].values
 
 
-#%%
+
 
 # Encoding categorical data
-
 
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
@@ -54,25 +56,27 @@ X = onehotencoder.fit_transform(X).toarray()
 X = X[:,1:]
 
 
-#%%
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
 
-#%%
+
+
+
 
 """
 
 Applying XGBoost
 
 """
-
+import xgboost as xgb
 from xgboost import XGBClassifier
 
 # create class object
-classifier = XGBClassifier()
+classifier = xgb.sklearn.XGBClassifier()
 
 
 # Fit the object to the dataset

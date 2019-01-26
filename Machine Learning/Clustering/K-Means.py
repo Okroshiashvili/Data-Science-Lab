@@ -1,16 +1,19 @@
 """
-Created on Sat Feb 24 16:52:26 2018
+Created on Sat Feb 24 2018
 
-@author: Nodar.Okroshiashvili
-"""
-#%%
-
+@author: Nodar Okroshiashvili
 """
 
+
+
+
+"""
 K-Means
 
 """
-#%%
+
+
+
 
 # Import the libraries
 import pandas as pd
@@ -25,7 +28,7 @@ dataset = pd.read_csv('data/Mall_Customers.csv')
 # Create independent variable
 X = dataset.iloc[:, [3,4]].values
 
-#%%
+
 
 # Using the Elbow Method to find the optimal number of clusters
 
@@ -48,7 +51,7 @@ for i in range(1, 11):
     wcss.append(kmeans.inertia_)
 # computes wcss or inertia
 
-#%%
+
     
     
 # Plot the result of loop
@@ -59,7 +62,7 @@ plt.xlabel('Number of Clusters')
 plt.ylabel('Wcss')
 plt.show()
 
-#%%
+
 
 # We have optimal number of clusters
 # Now let apply k-means to the dataset
@@ -72,7 +75,7 @@ kmeans = KMeans(n_clusters = 5, init = 'k-means++', max_iter=300, n_init=10, ran
 # Make "prediction" which client belongs to which cluster
 y_kmeans = kmeans.fit_predict(X)
 
-#%%
+
 
 # Visualize the clusters along with data points
 
@@ -88,4 +91,4 @@ plt.ylabel('Spending score (1-100)')
 plt.legend()
 plt.show()
 
-#%%
+

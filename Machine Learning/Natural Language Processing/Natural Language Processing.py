@@ -1,16 +1,20 @@
 """
-Created on Sun Mar 11 18:07:18 2018
+Created on Sun Mar 11 2018
 
-@author: Nodar.Okroshiashvili
-"""
-#%%
-
+@author: Nodar Okroshiashvili
 """
 
+
+
+
+
+"""
 Natural Language Processing
 
 """
-#%%
+
+
+
 
 # Import the libraries
 
@@ -28,10 +32,9 @@ dataset = pd.read_csv('data/Restaurant_Reviews.tsv', delimiter = '\t', quoting =
 # CSV may arise some problems while reading file
  
 
-#%%
+
 
 """
-
 Our mission is to create model that will predict new review is positive or negative
 
 """
@@ -56,14 +59,14 @@ review = re.sub('[^a-zA-Z]',' ', dataset['Review'][0])
 # Second parameter puts space, so we don't have two words stuck together
 # Third parameter is where we want to remove all but not letters
 
-#%%
+
 
 # Second step of the cleaning process is to set all the letters as lower case
 
 review = review.lower()
 
 
-#%%
+
 
 # At third step we remove non-significant words
 # We need to import nltk library to remove unuseful words
@@ -91,13 +94,13 @@ ps = PorterStemmer()
 review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))]
 # We add set function as python sets are much faster than lists
 
-#%%
+
 
 # We have to join everything back and have one string containing three words
 
 review = ' '.join(review)
 
-#%%
+
 
 # Now let apply all these steps to the whole dataset
 
@@ -121,7 +124,7 @@ for i in range(0, 1000):
     corpus.append(review)
 
 
-#%%
+
     
 # Create Bag of Words Model
     
@@ -158,7 +161,8 @@ Passing max_feature parameter and setting it to 1500 we get new matrix consistin
 # We don't have dependent variable, so we need to add it
 y = dataset.iloc[:, 1].values
 
-#%%
+
+
 
 """
 Here we create classification model to predict the out of review
@@ -183,7 +187,8 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
 
 
-#%%
+
+
 
 # Fitting Naive Bayes to the Training set
 from sklearn.naive_bayes import GaussianNB
@@ -195,12 +200,12 @@ classifier = GaussianNB()
 classifier.fit(X_train, y_train)
 
 
-#%%
+
 
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
 
-#%%
+
 
 # Make the Confusion Matrix
 
@@ -209,4 +214,6 @@ from sklearn.metrics import confusion_matrix
 # Create confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 
-#%%
+
+
+

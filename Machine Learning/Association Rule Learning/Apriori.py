@@ -1,17 +1,20 @@
 """
-Created on Mon Feb 26 09:58:08 2018
+Created on Mon Feb 26 2018
 
-@author: Nodar.Okroshiashvili
-"""
-#%%
-
+@author: Nodar Okroshiashvili
 """
 
+
+
+
+
+"""
 Apriori
 
 """
 
-#%%
+
+
 
 # Import Libraries
 
@@ -25,7 +28,6 @@ dataset = pd.read_csv("data/Market_Basket_Optimisation.csv", header= None)
 # Apriori algorithm expects list of lists as input and they must be strings
 # We need to convert dataframe into list of lists
 
-# We need two for loop
 
 # this loop goes to all the transactions
 transactions = []
@@ -34,7 +36,7 @@ for i in range(0, 7501):
     
 # Here i goes to all index and j goes to all column and extracts values for i    
     
-#%%
+
 
 # Apply Apriori to the dataset
 
@@ -49,7 +51,7 @@ rules = apriori(transactions, min_support = 0.003, min_confidence = 0.2, min_lif
 # min_lift = we need rules that have lift at least three
 
 
-#%%
+
 
 # Visualize the results and rules
 
@@ -63,4 +65,5 @@ for i in range(0, len(results)):
   
 myResults = [list(x) for x in results]
 
-#%%
+
+

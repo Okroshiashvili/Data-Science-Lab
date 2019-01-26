@@ -1,19 +1,20 @@
 """
-Created on Sun Feb  4 17:55:00 2018
+Created on Sun Feb  4 2018
 
-@author: Nodar.Okroshiashvili
-
-"""
-#%%
+@author: Nodar Okroshiashvili
 
 """
 
+
+
+
+"""
 Logistic Regression
 
-
 """
 
-#%%
+
+
 
 # Pre-processing of data
 
@@ -23,7 +24,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-#%%
+
 
 
 # Importing the dataset
@@ -35,16 +36,15 @@ X = dataset.iloc[:, [2,3]].values
 # Dependent variable
 y = dataset.iloc[:, 4].values
 
-#%%
 
-from sklearn.cross_validation import train_test_split
 
+from sklearn.model_selection import train_test_split
 
 # Splitting the dataset into the Training set and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 
 
-#%%
+
 
 
 # Feature Scaling
@@ -57,7 +57,7 @@ sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
-#%%
+
 
 # Fitting Logistic Regression to the Training set
 
@@ -71,13 +71,11 @@ classifier = LogisticRegression(random_state = 0)
 classifier.fit(X_train, y_train)
 
 
-#%%
+
 
 # Predicting the Test set results
-
 y_pred = classifier.predict(X_test)
 
-#%%
 
 
 # Make the Confusion Matrix
@@ -88,7 +86,7 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
 
-#%%
+
 
 # Visualizing the Training set results
 
@@ -152,4 +150,5 @@ plt.legend()
 plt.show()
 
 
-#%%
+
+

@@ -1,17 +1,18 @@
 """
-Created on Mon Feb  5 15:39:45 2018
+Created on Mon Feb  5 2018
 
-@author: Nodar.Okroshiashvili
+@author: Nodar Okroshiashvili
 
 """
-#%%
+
 
 """
 K Nearest Neighbors
 
 """
 
-#%%
+
+
 
 # Pre-processing of data
 
@@ -21,7 +22,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-#%%
+
 
 
 # Importing the dataset
@@ -33,16 +34,15 @@ X = dataset.iloc[:, [2,3]].values
 # Dependent variable
 y = dataset.iloc[:, 4].values
 
-#%%
 
-from sklearn.cross_validation import train_test_split
 
+from sklearn.model_selection import train_test_split
 
 # Splitting the dataset into the Training set and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 
 
-#%%
+
 
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler
@@ -54,7 +54,7 @@ sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
-#%%
+
 
 # Fitting KNN to the Training set
 from sklearn.neighbors import KNeighborsClassifier
@@ -65,12 +65,12 @@ classifier = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p = 2)
 # Fit the model
 classifier.fit(X_train, y_train)
 
-#%%
+
 
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
 
-#%%
+
 
 # Make the Confusion Matrix
 
@@ -80,7 +80,7 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
 
-#%%
+
 
 # Visualizing the Training set results
 
@@ -105,7 +105,8 @@ plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
 
-#%%
+
+
 
 # Visualizing the Test set results
 

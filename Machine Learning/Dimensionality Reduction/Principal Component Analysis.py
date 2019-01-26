@@ -1,19 +1,25 @@
 """
-Created on Mon Mar 26 21:43:02 2018
+Created on Mon Mar 26 2018
 
-@author: Nodar.Okroshiashvili
+@author: Nodar Okroshiashvili
 """
+
+
 
 # Dimensionality Reduction
 
-"""
 
+
+
+
+"""
 Principal Component Analysis
 
 """
 
 
-#%%
+
+
 
 """
 In dimensionality reduction there are two techniques: Feature Selection
@@ -25,12 +31,10 @@ Extracted features are called principal components.
 We have classification problem and we're going to apply PCA inside 
 Logistic Regression model.
 
-
-
 """
 
 
-#%%
+
 
 # Pre-processing of data
 
@@ -40,7 +44,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-#%%
 
 
 # Importing the dataset
@@ -52,16 +55,15 @@ X = dataset.iloc[:, 0:13].values
 # Dependent variable
 y = dataset.iloc[:, 13].values
 
-#%%
+
+
 
 from sklearn.model_selection import train_test_split
-
 
 # Splitting the dataset into the Training set and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
 
-#%%
 
 
 # Feature Scaling
@@ -74,7 +76,9 @@ sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 
-#%%
+
+
+
 
 """
 Applying PCA
@@ -99,7 +103,7 @@ explained_variance = pca.explained_variance_ratio_
 
 
 
-#%%
+
 
 
 """
@@ -120,13 +124,12 @@ classifier = LogisticRegression(random_state = 0)
 classifier.fit(X_train, y_train)
 
 
-#%%
+
 
 # Predicting the Test set results
-
 y_pred = classifier.predict(X_test)
 
-#%%
+
 
 
 # Make the Confusion Matrix
@@ -137,7 +140,7 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
 
-#%%
+
 
 # Visualizing the Training set results
 
@@ -162,7 +165,7 @@ plt.ylabel('PC_2')
 plt.legend()
 plt.show()
 
-#%%
+
 
 # Visualizing the Test set results
 
@@ -187,4 +190,5 @@ plt.ylabel('PC_2')
 plt.legend()
 plt.show()
 
-#%%
+
+
