@@ -12,7 +12,7 @@ I tried to be as detailed as possible, but surely, some googling will also help.
 ### How to use
 
 You can clone the repository and in spyder or in your other favorite IDE set the working directory to that folder. 
-Datasets are in each folder, except for convolutional Neural Networks, for which you can dounload data from provided link in code file. These are really toy datasets, just for learning purposes. I do hope it will make a difference.
+Datasets are in each folder, except for Convolutional Neural Networks, for which you can download data from provided link in the code file. I left the data folder and some pictures in it for guidance on how to prepare data folder directory for CNN. These are really toy datasets, just for learning purposes. I do hope it will make a difference.
 
 
 ### Major Update
@@ -23,11 +23,12 @@ In 26-Jan-2019 repo got some major updates.
 * Added more comments in each code file
 * Extended DL with supervised and unsupervised algorithms
 * Easily generalizable code for other datasets
+* Materials for farther reading in Deep Learning
 
 ### To Do
 
 * Add more intuitions for each algorithm and problem
-* Add some more algorithms such as
+* Add some more algorithms
 
 
 #### Contributors are warmly welcomed
