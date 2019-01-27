@@ -29,6 +29,7 @@ In 26-Jan-2019 repo got some major updates.
 
 * Add more intuitions for each algorithm and problem
 * Add some more algorithms
+* Each folder will have to have a brief description of algorithms with farther references
 
 
 #### Contributors are warmly welcomed
