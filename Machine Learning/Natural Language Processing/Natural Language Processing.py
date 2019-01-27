@@ -180,8 +180,7 @@ corresponds to one word for those specific reviews.
 
 
 
-from sklearn.cross_validation import train_test_split
-
+from sklearn.model_selection import train_test_split
 
 # Splitting the dataset into the Training set and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
@@ -200,8 +199,6 @@ classifier = GaussianNB()
 classifier.fit(X_train, y_train)
 
 
-
-
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
 
@@ -213,7 +210,5 @@ from sklearn.metrics import confusion_matrix
 
 # Create confusion matrix
 cm = confusion_matrix(y_test, y_pred)
-
-
 
 
