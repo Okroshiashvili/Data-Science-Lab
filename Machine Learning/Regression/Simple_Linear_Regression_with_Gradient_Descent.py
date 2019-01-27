@@ -38,7 +38,7 @@ In our case it's C(b,m) = 1/N * sum[y - y_hat]^2
 def cost_fun(b,m,points):
     totalError = 0
     for i in range(len(points)):
-        # iteration goes through each point for ind and dep variable
+        # iteration goes through each point for independent and dependent variables
         x = points[i, 0]
         y = points[i, 1]
         totalError = totalError + (y - (m*x + b)) ** 2
@@ -63,6 +63,7 @@ Taking derivative gives us:
 # Function computes the direction of Gradient for any initial guess.
 # b_current and m_current are our initial guess for gradients 
 # what we put in our gradient function
+
 def gradient(b_currnet, m_current, points, learningRate):
     # b_gradient and m_gradient will adjust for each iteration
     b_gradient = 0
@@ -121,4 +122,7 @@ def run():
 # To tune the parameters change them only inside run() function
 if __name__ == '__main__':
     run()
+
+
+
 

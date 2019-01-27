@@ -1,5 +1,7 @@
 """
-@author: Nodar.Okroshiashvili
+Created on Sun Jan 27 2019
+
+@author: Nodar Okroshiashvili
 
 """
 
@@ -21,16 +23,16 @@ import statsmodels.formula.api as sm
 
 
 # Open dataset and separate X and Y variable
-df = pd.read_csv('wage.csv') 
+df = pd.read_csv('data/wage1.csv') 
 
 
 # Extract independent variables and convert them into numpy array while preserving
 # variable order
-X = df.iloc[:,[1,2,3,4,5,6]].as_matrix()
+X = df.iloc[:,[0,1,2,3,4,5,6]].values
 
 
 # Extract dependent variable
-y = df['wage'].as_matrix()
+y = df['wage'].values
 
 
 
@@ -59,7 +61,9 @@ def backwardElimination(x, sl):
 
 
 SL = 0.05
-X_optimal = X[:, [0, 1, 2, 3, 4, 5]]
+X_optimal = X[:, [0, 1, 2, 3, 4, 5,6]]
 
 X_modeled = backwardElimination(X_optimal, SL)
 # Returns matrix of optimal independent variables
+
+

@@ -1,11 +1,11 @@
 """
-Created on Wed Jan 31 11:43:15 2018
+Created on Wed Jan 31 2018
 
-@author: Nodar.Okroshiashvili
+@author: Nodar Okroshiashvili
 
 """
 
-#%%
+
 
 
 # Multiple Linear Regression
@@ -18,11 +18,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv('50_Startups.csv')
+dataset = pd.read_csv('data/50_Startups.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 4].values
 
-#%%
+
 
 # Encoding categorical variable
 
@@ -42,17 +42,18 @@ X = X[:, 1:]
 # First colon means that we choose all the rows, and 1: means we choose all the columns
 # but not first columns
 
-#%%
+
 
 # Splitting the dataset into the Training set and Test set
 
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
 
 # We don't need to apply Feature Scaling
 
-#%%
+
 
 # Fit the model to the Training set
 
@@ -66,7 +67,7 @@ regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
 
 
-#%%
+
 
 
 """
@@ -166,14 +167,3 @@ print(regressor_OLS.summary())
 # We see that only constant term and R&D spend drives the Profit for that company
 
 # The model is finished!
-
-
-
-
-
-
-
-
-
-
-

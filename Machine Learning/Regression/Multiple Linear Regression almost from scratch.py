@@ -1,8 +1,11 @@
 """
-Created on Tue Jun 26 15:40:47 2018
+Created on Tue Jun 26 2018
 
-@author: Nodar.Okroshiashvili
+@author: Nodar Okroshiashvili
 """
+
+
+
 
 import pandas as pd
 import numpy as np
@@ -11,15 +14,15 @@ import seaborn as sns
 from scipy.stats import t as t_stat
 from scipy.stats import f as f_stat
 
-df = pd.read_csv('wage1.csv')
+df = pd.read_csv('data/wage1.csv')
 
-##################################################
+
 
 ## Pair plot to see relationships btw variables
 #new_df = df[['wage', 'hours', 'educ', 'exper']]
 #sns.pairplot(new_df)
 
-##################################################
+
 
 # Separate Y and X matrix from dataset
 Y = np.array(df['wage'])
@@ -169,46 +172,3 @@ R_square = SSM / SST
 Adj_R_square = 1 - ((df_T / df_E)*(1-R_square))
 
 
-
-
-# Model Selection
-"""
-Calculate Information Criteria to select the best model 
-among several
-
-"""
-# Akaike Information Criteria
-# Deals with the trade-off btw R_square and model simplicity
-# AIC only tells model quality relative to other models
-AIC = (len(X) * np.log(SSE/len(X))) + 2*len(keys) 
-"""
-არ ემთხვევა შესწორება უნდა
-
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##################################################
-
-#  ამ მერე სადემონსტრაციოდ გავუშვებ რეგრესია
-
-
-import statsmodels.api as sm
-regressor = sm.OLS(Y,X).fit()
-
-regressor.summary()
-
-
-
-np.insert()
