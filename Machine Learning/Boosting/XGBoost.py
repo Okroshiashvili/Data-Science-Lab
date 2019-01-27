@@ -36,9 +36,7 @@ y = dataset.iloc[:, 13].values
 
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
-
 # We have two categorical variables, so we need two encoders
-
 
 # Categorical variable for country
 labelencoder_X_1 = LabelEncoder()
@@ -64,31 +62,36 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 
 
-
-
-
 """
 
 Applying XGBoost
 
 """
 import xgboost as xgb
-from xgboost import XGBClassifier
-
-# create class object
-classifier = xgb.sklearn.XGBClassifier()
 
 
-# Fit the object to the dataset
-classifier.fit(X_train, y_train)
+dtrain = xgb.DMatrix(X_train, label=y_train)
+dtest = xgb.DMatrix(X_test,y_test)
+
+# Model Hyper Parameters
+# These paramters should be tuned for better performance
+param = {'max_depth':2, 'eta':1, 'silent':1, 'objective':'binary:logistic',
+         'eval_metric':'auc'}
+
+num_round = 10
+
+# Fit the model
+classifier = xgb.train(param, dtrain, num_round)
 
 
-#%%
 
 # Predicting the Test set results
-y_pred = classifier.predict(X_test)
+y_pred = classifier.predict(dtest)
 
-#%%
+# By default we got class probabilities
+# This code turns it into binary outcome
+y_pred = [round(value) for value in y_pred]
+
 
 # Make the Confusion Matrix
 
@@ -97,22 +100,6 @@ from sklearn.metrics import confusion_matrix
 # Create confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 
-#%%
 
-"""
-Applying K-Fold Cross Validation
+# More examples see this: https://xgboost.readthedocs.io/en/latest/get_started.html
 
-"""
-
-from sklearn.model_selection import cross_val_score
-
-
-# We define accuracy vector which will be populated after K-Fold
-accuracies = cross_val_score(estimator=classifier, X = X_train, y = y_train, cv = 10)
-
-# Get average accuracy
-mean = accuracies.mean()
-# Get standard deviation
-std = accuracies.std()
-
-#%%
