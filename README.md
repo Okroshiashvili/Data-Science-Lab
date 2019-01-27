@@ -17,7 +17,7 @@ Datasets are in each folder, except for Convolutional Neural Networks, for which
 
 ### Major Update
 
-In 26-Jan-2019 repo got some major updates.
+In 27-Jan-2019 repo got some major updates.
 
 * Separated ML and DL algorithms in different folders
 * Added more comments in each code file
