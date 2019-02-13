@@ -19,7 +19,7 @@ Datasets are in each folder, except for Convolutional Neural Networks, for which
 
 In 27-Jan-2019 repo got some major updates.
 
-* Separated ML and DL algorithms in different folders
+* Separated ML, DL, NLP, and RL algorithms in different folders
 * Added more comments in each code file
 * Extended DL with supervised and unsupervised algorithms
 * Easily generalizable code for other datasets
@@ -27,6 +27,7 @@ In 27-Jan-2019 repo got some major updates.
 
 ### To Do
 
+* Add data visualization part
 * Add more intuitions for each algorithm and problem
 * Add some more algorithms
 * Each folder will have to have a brief description of algorithms with farther references
