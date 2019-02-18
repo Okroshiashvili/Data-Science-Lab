@@ -1,6 +1,6 @@
 # Machine Learning
 
-In this folder, there are various machine learning algorithms. Each code file contains comments where I tried to be as detailed as possible to make code more undrstandable.
+In this folder, there are various machine learning algorithms. Each code file contains comments where I tried to be as detailed as possible to make the code more understandable.
 
 * Supervised Machine Learning
 
@@ -17,6 +17,6 @@ In this folder, there are various machine learning algorithms. Each code file co
 
 
 
-Farthermore, there are *Model Selection* and *Data Preprocessing* folders, which contains simple data preprocessing steps as well as model validation and grid search search methods.
+Furthermore, there are *Model Selection* and *Data Preprocessing* folders, which contains simple data preprocessing steps as well as model validation and grid search methods.
 
 
