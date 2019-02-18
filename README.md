@@ -29,7 +29,7 @@ In 27-Jan-2019 repo got some major updates.
 18-Feb-2019
 
 * Added data visualization part
-    * This folder currently includes *Plotly* and *Dash*
+    * This folder currently includes *Plotly*, *Dash*, and *Bokeh*
 
 
 
