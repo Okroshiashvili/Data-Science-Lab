@@ -35,7 +35,7 @@ imputer = imputer.fit(X[:, 1:3])
 X[:, 1:3] = imputer.transform(X[:, 1:3])
 
 """
-Here missing value are denoted as NaN, and we use sample mean to extrapolate missing observation
+Here missing value are denoted as NaN, and we use sample mean to extrapolate missing observations
 
 """
 
