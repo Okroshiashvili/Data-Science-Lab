@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>I am the title</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static "/polls/css/main.css" %}"/>
+        <link rel='stylesheet' href={{cdn_css|safe}} type="text/css"/>
+        <script type="text/javascript" src={{cdn_js|safe}}></script>
+    </head>
+    <body>
+      <h3> I am a heading</h3>
+      {{div|safe}}
+      {{js|safe}}
+      <p> I am a paragraph </p>
+    </body>
+</html>
