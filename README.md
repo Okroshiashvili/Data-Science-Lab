@@ -1,4 +1,4 @@
-# Machine-Learning-Deep-Learning
+# Data Science Laboratory
 In this repository, I put some Machine Learning and Deep Learning algorithms.
 Some of them come from various MOOCs and some of them are my work.
 
