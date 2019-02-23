@@ -20,7 +20,7 @@ app = dash.Dash()
 
 
 # Read the data
-df = pd.read_csv('../data/OldFaithful.csv')
+df = pd.read_csv('data/OldFaithful.csv')
 
 # The field names are:
 # 'D' = date of recordings in month (in August),
