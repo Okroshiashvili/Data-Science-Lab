@@ -12,7 +12,7 @@ import pandas as pd
 
 
 # Read the data
-df = pd.read_csv('../data/FremontBridgeBicycles.csv')
+df = pd.read_csv('data/FremontBridgeBicycles.csv')
 
 
 # Conver "Date" columns into datetime series

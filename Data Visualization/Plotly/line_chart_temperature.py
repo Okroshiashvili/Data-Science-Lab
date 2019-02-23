@@ -11,7 +11,7 @@ import plotly.graph_objs as go
 
 
 # Pandas DataFrame
-df = pd.read_csv('../data/2010YumaAZ.csv')
+df = pd.read_csv('data/2010YumaAZ.csv')
 
 days = ['TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY','MONDAY']
 

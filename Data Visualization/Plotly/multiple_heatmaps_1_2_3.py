@@ -13,9 +13,9 @@ import pandas as pd
 
 
 # Read the data
-df_1 = pd.read_csv('../data/2010SitkaAK.csv')
-df_2 = pd.read_csv('../data/2010SantaBarbaraCA.csv')
-df_3 = pd.read_csv('../data/2010YumaAZ.csv')
+df_1 = pd.read_csv('data/2010SitkaAK.csv')
+df_2 = pd.read_csv('data/2010SantaBarbaraCA.csv')
+df_3 = pd.read_csv('data/2010YumaAZ.csv')
 
 
 # Create the traces

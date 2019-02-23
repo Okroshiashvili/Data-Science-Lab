@@ -12,7 +12,7 @@ import pandas as pd
 
 
 # Read the data
-df = pd.read_csv('../data/2010SitkaAK.csv')
+df = pd.read_csv('data/2010SitkaAK.csv')
 
 
 # Data variable

@@ -14,7 +14,7 @@ import plotly.offline as pyo
 import plotly.graph_objs as go
 
 # Read the data
-df = pd.read_csv('../data/population.csv', index_col=0)
+df = pd.read_csv('data/population.csv', index_col=0)
 
 
 ## If you want full dataset, uncomment and use this peace of code

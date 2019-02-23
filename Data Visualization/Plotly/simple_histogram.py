@@ -11,7 +11,7 @@ import pandas as pd
 
 
 # Read the data
-df = pd.read_csv('../data/mpg.csv')
+df = pd.read_csv('data/mpg.csv')
 
 
 # Data for Plotly

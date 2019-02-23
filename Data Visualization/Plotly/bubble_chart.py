@@ -11,7 +11,7 @@ import pandas as pd
 
 
 # Read the data
-df = pd.read_csv('../data/mpg.csv')
+df = pd.read_csv('data/mpg.csv')
 
 
 # Add columns to the DataFrame to convert model year into string and

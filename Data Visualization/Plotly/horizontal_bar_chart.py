@@ -9,7 +9,7 @@ import plotly.graph_objs as go
 import pandas as pd
 
 # Read the data
-df = pd.read_csv('../data/mocksurvey.csv', index_col = 0)
+df = pd.read_csv('data/mocksurvey.csv', index_col = 0)
 
 
 

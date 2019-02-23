@@ -10,7 +10,7 @@ import plotly.graph_objs as go
 import pandas as pd
 
 # Read data
-df = pd.read_csv('../data/2018WinterOlympics.csv')
+df = pd.read_csv('data/2018WinterOlympics.csv')
 
 
 # Create data for Plotly

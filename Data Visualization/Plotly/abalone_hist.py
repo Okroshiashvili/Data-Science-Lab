@@ -12,7 +12,7 @@ import pandas as pd
 
 
 # Read the data
-df = pd.read_csv('../data/abalone.csv')
+df = pd.read_csv('data/abalone.csv')
 
 
 # Data for Plotly
