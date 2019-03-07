@@ -38,8 +38,8 @@ In 27-Jan-2019
 * Add more intuitions for each algorithm and problem
 * Add some more algorithms
 * Each folder will have to have a brief description of algorithms with farther references
-* Add more visualization in data visualization folder
-
+* Add more visualization in data visualization folder, such as Matplotlib, Seaborn and Altair
+* Add folder for web scraping
 
 #### Contributors are warmly welcomed
 
