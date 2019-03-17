@@ -32,6 +32,12 @@ In 27-Jan-2019
     * This folder currently includes *Plotly*, *Dash*, and *Bokeh*
 
 
+17-Mar-2019
+
+* Added web scarping part.
+    * There is folder for only beginners. Plan to add some more.
+
+
 
 ### To Do
 
@@ -39,7 +45,9 @@ In 27-Jan-2019
 * Add some more algorithms
 * Each folder will have to have a brief description of algorithms with farther references
 * Add more visualization in data visualization folder, such as Matplotlib, Seaborn and Altair
-* Add folder for web scraping
+* Extend web scraping part
+
+
 
 #### Contributors are warmly welcomed
 
