@@ -46,7 +46,6 @@ In 27-Jan-2019
 * Add some more algorithms
 * Each folder will have to have a brief description of algorithms with farther references
 * Add more visualization in data visualization folder, such as Matplotlib, Seaborn and Altair
-* Extend web scraping part
 
 
 
