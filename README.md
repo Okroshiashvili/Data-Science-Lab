@@ -35,7 +35,8 @@ In 27-Jan-2019
 17-Mar-2019
 
 * Added web scarping part.
-    * There is folder for only beginners. Plan to add some more.
+    * Added little scripts for beginners
+    * Added Craigslist scraping section
 
 
 
