@@ -39,13 +39,20 @@ In 27-Jan-2019
     * Added Craigslist scraping section
 
 
+8-May-2019
+
+* Added data structures and algorithms part
+    * This folder includes data structures and algorithms subfolders
+
+
 
 ### To Do
 
 * Add more intuitions for each algorithm and problem
-* Add some more algorithms
+* Add some more ML algorithms
 * Each folder will have to have a brief description of algorithms with farther references
-* Add more visualization in data visualization folder, such as Matplotlib, Seaborn and Altair
+* Add more visualization in data visualization folder, such as Matplotlib, Seaborn, Altair, and Plotnine
+* Add more data structures and algorithms
 
 
 
