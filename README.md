@@ -45,6 +45,12 @@ In 27-Jan-2019
     * This folder includes data structures and algorithms subfolders
 
 
+16-May-2019
+
+* Added data visualization part
+    * Added *Seaborn*
+
+
 
 ### To Do
 
