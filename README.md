@@ -39,6 +39,11 @@ In 27-Jan-2019
     * Added Craigslist scraping section
 
 
+20-Apr-2019
+
+* Added web scraping codes
+
+
 8-May-2019
 
 * Added data structures and algorithms part
@@ -48,7 +53,9 @@ In 27-Jan-2019
 16-May-2019
 
 * Added data visualization part
-    * Added *Seaborn*
+    * *Seaborn*
+    * *Pandas*
+    * *Plotnine*
 
 
 
@@ -57,7 +64,7 @@ In 27-Jan-2019
 * Add more intuitions for each algorithm and problem
 * Add some more ML algorithms
 * Each folder will have to have a brief description of algorithms with farther references
-* Add more visualization in data visualization folder, such as Matplotlib, Seaborn, Altair, and Plotnine
+* Add more visualization in data visualization folder, such as Matplotlib and Altair
 * Add more data structures and algorithms
 
 
