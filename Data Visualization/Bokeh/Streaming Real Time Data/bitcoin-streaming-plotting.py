@@ -1,10 +1,10 @@
-"""
-Created on Sat Feb  9 2019
 
-@author: Nodar Okroshiashvili
+
+
+"""
+Plots bitcoin price movement
 """
 
-# Plots bitcoin price movement
 
 from bokeh.io import curdoc
 from bokeh.models import ColumnDataSource, DatetimeTickFormatter
@@ -13,10 +13,10 @@ from random import randrange
 import requests
 from bs4 import BeautifulSoup
 
-#create figure
+# Create figure
 f=figure()
 
-#create webscraping function
+# Create webscraping function
 def extract_value():
     r=requests.get("https://coinmarketcap.com/currencies/bitcoin/",
                    headers={'User-Agent':'Mozilla/5.0'})
@@ -26,19 +26,19 @@ def extract_value():
     value_net=float(value_raw[1296].text)
     return value_net
 
-#create ColumnDataSource
+# Create ColumnDataSource
 source=ColumnDataSource(dict(x=[1],y=[extract_value()]))
 
-#create glyphs
+# Create glyphs
 f.circle(x='x',y='y',color='olive',line_color='brown',source=source)
 f.line(x='x',y='y',source=source)
 	
-#create periodic function
+# Create periodic function
 def update():
     new_data=dict(x=[source.data['x'][-1]+1],y=[extract_value()])
     source.stream(new_data,rollover=200)
     print(source.data)
 
-#add figure to curdoc and configure callback
+# Add figure to curdoc and configure callback
 curdoc().add_root(f)
 curdoc().add_periodic_callback(update,2000)

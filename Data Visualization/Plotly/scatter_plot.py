@@ -1,12 +1,9 @@
+
+
+
 """
-Created on Sat Feb 16 2019
-
-@author: Nodar Okroshiashvili
+Scatter Plot
 """
-
-
-#    Scatter Plot
-
 
 
 import plotly.offline as pyo
@@ -25,7 +22,7 @@ data = [go.Scatter(
         x = rand_x,
         y = rand_y,
         mode = 'markers',
-        # Change marker tyle
+        # Change marker style
         marker = dict(size = 12,
                       color = 'rgb(27,04,92)',
                       symbol = 'square',
@@ -43,7 +40,5 @@ layout = go.Layout(
 fig = go.Figure(data=data, layout=layout)
 
 # Plot figure object
-pyo.plot(fig, filename="sctter.html")
-
-
+pyo.plot(fig, filename="scatter_plot.html")
 

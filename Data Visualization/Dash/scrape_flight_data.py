@@ -1,19 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 26 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
 """
-
 This script will make regular API calls to http://data-live.flightradar24.com
 to obtain updated total worldwide flights data.
 This version continuously updates the number of flights worldwide,
 and graphs those results over time.
-
 """
 
 
@@ -99,11 +91,9 @@ if __name__ == '__main__':
 After running the script the website does not show up.
 I tried to find the way out but with no success.
 Then I figureout that the administration of the site has changed the site
-to block it showng in Iframe tag
+to block it showing in Iframe tag
 
 """
-
-
 
 
 

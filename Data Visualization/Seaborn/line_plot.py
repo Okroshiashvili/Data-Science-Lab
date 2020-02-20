@@ -1,8 +1,4 @@
-"""
-Created on Wed May 15 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 import pandas as pd
@@ -16,7 +12,3 @@ df = pd.read_csv('data/fifa.csv', index_col='Date', parse_dates=True)
 plt.figure(figsize=(10,6))
 # Plot the line
 sns.lineplot(data = df)
-
-
-
-

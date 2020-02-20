@@ -1,12 +1,9 @@
-"""
-Created on Thu May 16 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 """
 Data Link:
+
     https://www.kaggle.com/zynicide/wine-reviews
     
 """
@@ -16,6 +13,8 @@ Data Link:
 
 
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 df = pd.read_csv('winemag-data_first150k.csv', index_col=0)
@@ -88,10 +87,6 @@ df[df['price'] < 100].plot.hexbin(x='price', y='points', gridsize=15)
 
 
 ######         Sub-plots       ######
-
-
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 
 fig, axarr = plt.subplots(2, 1, figsize=(12, 8))

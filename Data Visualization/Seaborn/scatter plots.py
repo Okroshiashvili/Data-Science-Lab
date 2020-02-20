@@ -1,9 +1,3 @@
-"""
-Created on Thu May 16 2019
-
-@author: Nodar Okroshiashvili
-""""
-
 
 
 
@@ -37,13 +31,14 @@ sns.scatterplot(x=insurance_data['bmi'], y=insurance_data['charges'],
 
 # Let add regression line
 # But we know that we have three variable scatter plot and adding one
-# regression line would not be correct. We can add two regression line
+# regression line would not be correct. We can add two regression lines
 sns.lmplot(x='bmi', y='charges', hue='smoker', data=insurance_data)
 
 
 
-# We use scatter plot to represent relationship btw two constinuous variable
+# We use scatter plot to represent relationship btw two continuous variable
 # Now let plot scatter plot for categorical variable
 sns.swarmplot(x=insurance_data['smoker'], y=insurance_data['charges'])
+
 
 

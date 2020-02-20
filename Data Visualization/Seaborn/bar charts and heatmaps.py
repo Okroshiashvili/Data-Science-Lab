@@ -1,9 +1,3 @@
-"""
-Created on Thu May 16 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -12,9 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-
 flight_data = pd.read_csv('data/flight_delays.csv',index_col='Month')
-
 
 
 
@@ -25,7 +17,7 @@ plt.title("Average Arrival Delay for Spirit Airlines Flights, by Month")
 sns.barplot(x=flight_data.index, y=flight_data['NK'])
 
 plt.ylabel('Arrival delay (in minutes)')
-
+plt.show()
 
 
 # Heatmap
@@ -35,5 +27,6 @@ plt.title("Average Arrival Delay for Each Airline, by Month")
 sns.heatmap(data=flight_data, annot=True)
 
 plt.xlabel('Airline')
+plt.show()
 
 

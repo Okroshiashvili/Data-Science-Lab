@@ -1,9 +1,3 @@
-"""
-Created on Mon Jun 10 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -27,15 +21,11 @@ the tree is unbalanced and needs rotation.
 
 
 AVL tree has balance factor, which is:
-    balance factor = height(left_subtree) - heght(right_subtree)
-
+    balance factor = height(left_subtree) - height(right_subtree)
 
 
 """
 
-
-
-# First implement Node class
 
 class Node:
     
@@ -47,8 +37,6 @@ class Node:
 
 
 
-# Let implement AVL tree
-
 class AVL:
     
     def __init__(self):
@@ -58,7 +46,8 @@ class AVL:
     def insert(self, data):
         # On every insertion we have to check if we violate AVL property
         self.root = self.Insert_Node(data, self.root)
-        
+
+
     def remove(self, data):
         if self.root:
             self.root = self.RemoveNode(data, self.root)
@@ -98,7 +87,7 @@ class AVL:
             
             
         if not node:
-            return node # If the tree had just a single node
+            return node
         
         node.height = max(self.calculate_height(node.leftChild),
                           self.calculate_height(node.rightChild)) + 1
@@ -125,12 +114,10 @@ class AVL:
         
         return node
     
-        
-    
     
     def Insert_Node(self, data, node):
         
-        if not node: # Check if node is empty
+        if not node:
             return Node(data)
         
         if data < node.data:
@@ -146,8 +133,6 @@ class AVL:
         # Return node, but check if AVL property is violated
         # Let call violation method
         return self.settle_violation(data, node)
-    
-    
     
     
     def settle_violation(self, data, node):
@@ -191,13 +176,13 @@ class AVL:
             return self.left_rotation(node)
         
         return node
-        
     
     
     def traverse(self):
         if self.root:
             self.traverseInorder(self.root)
 	
+    
     def traverseInorder(self, node):
         if node.leftChild:
             self.traverseInorder(node.leftChild)
@@ -206,9 +191,7 @@ class AVL:
         if node.rightChild:
             self.traverseInorder(node.rightChild)
     
-    
-
-        
+     
     # Define some helper functions
     def calculate_height(self, node):
         if not node:   # This means node is None or has no any child
@@ -233,7 +216,7 @@ class AVL:
 
 
 
-    # Below, we imlement left and rigth rotations. Rotation is very crucial
+    # Below, we implement left and right rotations. Rotation is very crucial
     # for AVL as it guarantees balance of trees
     def left_rotation(self, node):
         print("Rotating to the left on node", node.data)
@@ -242,7 +225,7 @@ class AVL:
         t = temp_RightChild.leftChild
         
         temp_RightChild.leftChild = node
-        node.rigthChild = t
+        node.rightChild = t
         
         # Calculate height
         node.height = max(self.calculate_height(node.leftChild),
@@ -303,12 +286,14 @@ avl.traverse()
 
 
 
-## Resources
-#
-#https://runestone.academy/runestone/static/pythonds/Trees/AVLTreeImplementation.html
-#
-#https://algorithmtutor.com/Data-Structures/Tree/AVL-Trees/
-#
-#https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
+
+# # Resources
+
+# https://runestone.academy/runestone/static/pythonds/Trees/AVLTreeImplementation.html
+
+# https://algorithmtutor.com/Data-Structures/Tree/AVL-Trees/
+
+# https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
+
 
 

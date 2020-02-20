@@ -1,17 +1,11 @@
+
+
+
 """
-Created on Sun Feb  3 2019
-
-@author: Nodar Okroshiashvili
+Plotting flower species
 """
 
 
-
-#Plotting flower species
-
-
-
-
-#Importing libraries
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
 from bokeh.sampledata.iris import flowers
@@ -66,4 +60,5 @@ f.circle(x="petal_length",
 
 #Save and show the figure
 show(f)
+
 

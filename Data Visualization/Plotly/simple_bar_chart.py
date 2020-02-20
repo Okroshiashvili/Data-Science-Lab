@@ -1,8 +1,4 @@
-"""
-Created on Sat Feb 16 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 import plotly.offline as pyo
@@ -27,3 +23,4 @@ fig = go.Figure(data = data, layout = layout)
 
 # Plot the data
 pyo.plot(fig, filename='bar_chart.html')
+

@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb 20 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -35,15 +29,13 @@ def update_output_div(input_value):
     return "You entered: {}".format(input_value)
 
 # We are going to connect text entered in Dash core component
-# to be displaied in html Div tag. To do that we have to use decorator
+# to be displayed in html Div tag. To do that we have to use decorator
     
-
 
 
 
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-
 
 

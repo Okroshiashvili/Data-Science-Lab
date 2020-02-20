@@ -1,9 +1,3 @@
-"""
-Created on Mon Jun 24 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -41,15 +35,18 @@ class Node:
     def __cmp__(self, other_vertex):
         return self.cmp(self.min_distance, other_vertex.min_distance)
     
+
     def __lt__(self, other):
         selfPriority = self.min_distance
         otherPriority = other.min_distance
         return selfPriority < otherPriority
     
 
+
 class Dijkstra:
     
-    def Calculate_Shortest_Path(self, vertex_list, star_vertex):
+
+    def calculate_shortest_path(self, vertex_list, star_vertex):
         
         q = []
         star_vertex.min_distance = 0
@@ -69,7 +66,8 @@ class Dijkstra:
                     v.min_distance = new_distance
                     heapq.heappush(q, v)
     
-    def Get_Shortest_Path(self, target_vertex):
+
+    def get_shortest_path(self, target_vertex):
         print('Shortest path to vertex is: ', target_vertex.min_distance)
         
         node = target_vertex
@@ -139,11 +137,8 @@ vertex_list = (node1,node2,node3, node4, node5, node6, node7, node8)
 
 algorithm = Dijkstra()
 
-algorithm.Calculate_Shortest_Path(vertex_list, node1)
+algorithm.calculate_shortest_path(vertex_list, node1)
 
 # Calculate the shortest path from node A to node D
-algorithm.Get_Shortest_Path(node4)
-
-
-
+algorithm.get_shortest_path(node4)
 

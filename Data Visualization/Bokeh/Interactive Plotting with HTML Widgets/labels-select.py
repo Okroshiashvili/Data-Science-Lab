@@ -1,15 +1,11 @@
+
+
+
 """
-Created on Sat Feb  9 2019
-
-@author: Nodar Okroshiashvili
+Bokeh Server
 """
 
 
-#                       Bokeh Server
-
-
-
-#importing libraries
 from bokeh.plotting import figure
 from bokeh.io import curdoc
 from bokeh.models.annotations import LabelSet
@@ -47,7 +43,7 @@ options=[("average_grades","Average Grades"),
          ("exam_grades","Exam Grades"),
          ("student_names","Student Names")]
 
-# Selct widget
+# Select widget
 select=Select(title="Attribute",options=options)
 
 # Calls function "update_labels" and changes the widget

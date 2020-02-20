@@ -1,8 +1,4 @@
-"""
-Created on Sat Feb 16 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 import pandas as pd
@@ -40,5 +36,4 @@ fig = go.Figure(data = data, layout = layout)
 
 # Plot the data
 pyo.plot(fig, filename='temperature.html')
-
 

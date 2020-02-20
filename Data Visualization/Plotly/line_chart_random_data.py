@@ -1,12 +1,9 @@
+
+
+
 """
-Created on Sat Feb 16 2019
-
-@author: Nodar Okroshiashvili
+Line Chart of Random Data
 """
-
-
-#   Line Chart of Random Data
-
 
 import numpy as np
 import plotly.offline as pyo
@@ -49,6 +46,4 @@ fig = go.Figure(data = data, layout = layout)
 
 # Plot data
 pyo.plot(fig, filename='line charts.html')
-
-
 

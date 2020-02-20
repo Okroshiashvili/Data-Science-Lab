@@ -1,12 +1,9 @@
+
+
+
 """
-Created on Sun Feb 10 2019
-
-@author: Nodar Okroshiashvili
+Visualizing Spinning Planets
 """
-
-
-#        Visualizing Spinning Planets
-
 
 
 from math import cos, sin, radians
@@ -104,6 +101,5 @@ def update():
 # Add periodic callback and plot the curdoc
 curdoc().add_periodic_callback(update, 100)
 curdoc().add_root(p)
-
 
 

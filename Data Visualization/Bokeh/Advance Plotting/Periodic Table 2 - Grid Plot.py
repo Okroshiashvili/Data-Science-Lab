@@ -1,17 +1,11 @@
-"""
-Created on Mon Feb  4 20:34:55 2019
 
-@author: Nodar Okroshiashvili
+
 
 """
+Plotting periodic table elements
+"""
 
 
-#Plotting periodic table elements
-
-
-
-
-#Importing libraries
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
 from bokeh.layouts import gridplot
@@ -61,4 +55,5 @@ f = gridplot([[f1,f2], [None,f3]])
 
 #Save and show the figure
 show(f)
+
 

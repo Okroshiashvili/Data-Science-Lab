@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Feb 23 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 """
-
 In this example I present how to return multiple outputs.
-
 """
 
 import dash
@@ -35,7 +28,7 @@ app.layout = html.Div([
                 value = 1),
         html.Div(id = 'wheels-output'),
         
-        html.Hr(), # Add horizontal rule for nice seperate
+        html.Hr(), # Add horizontal rule for nice separate
         
         dcc.RadioItems(
                 id = 'colors',
@@ -73,7 +66,4 @@ def callback_b(colors_value):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-
-
-
 

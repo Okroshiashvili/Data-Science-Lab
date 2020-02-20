@@ -1,9 +1,3 @@
-"""
-Created on Thu Jun 20 19:43:55 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -28,14 +22,13 @@ class Node:
 class TST:
     
     def __init__(self):
-        # Initialize the root node
+        """
+        Initialize the root node
+        """
         self.rootNode = None
-        
-    def insert(self, key, value):
-        self.rootNode = self.Insert_Item(self.rootNode, key, value, 0)
-        
+
+
     def Insert_Item(self, node, key, value, index):
-        
         c = key[index]
         
         if node == None:
@@ -50,17 +43,8 @@ class TST:
         else:
             node.value = value
         return node
-    
-    
-    def get(self, key):
-        
-        node = self.Get_Item(self.rootNode, key, 0)
-        
-        if node == None:
-            return -1
-        
-        return node.value
-    
+
+
     def Get_Item(self, node, key, index):
         
         if node == None:
@@ -76,6 +60,38 @@ class TST:
             return self.Get_Item(node.middleNode, key, index + 1)
         else:
             return node
+    
+
+    def insert(self, key: str, value: int):
+        """
+        Takes key:value pair and inserts them in Tree
+        
+        Args:
+            key: str value for a key
+            value: int value for a value
+        """
+        self.rootNode = self.Insert_Item(self.rootNode, key, value, 0)
+    
+    
+    def get(self, key: str) -> int:
+        """
+        Takes the key and returns its corresponding value
+        
+        Args:
+            key: the key for which the value has to be returned
+        
+        Returns:
+            int: value for a given key
+        """
+        node = self.Get_Item(self.rootNode, key, 0)
+        
+        if node == None:
+            return -1
+        
+        return node.value
+    
+
+
 
 
 # Test the algorithm
@@ -87,7 +103,6 @@ tst.insert('apple', 100)
 tst.insert('orange', 200)
 
 print(tst.get('orange'))
-
 
 
 

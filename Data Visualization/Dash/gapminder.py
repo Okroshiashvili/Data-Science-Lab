@@ -1,14 +1,8 @@
-# -*- coding: utf-8 -*-
+
+
 """
-Created on Wed Feb 20 2019
-
-@author: Nodar Okroshiashvili
+Dash callbacks with graphs
 """
-
-
-
-#   Dash callbacks with graphs
-
 
 
 import dash

@@ -1,9 +1,3 @@
-"""
-Created on Wed May  8 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -19,13 +13,11 @@ find its position in sorted part and place it there.
 """
 
 
-
-
 def insertion_sort(arr):
     # Insertion sort is composed of two loops
     # One is outer loop and second is inner loop
     # I'll use for loop as an outer loop and
-    # wile loop and an inner loop
+    # while loop as an inner loop
     for i in range(1, len(arr)):
         value = arr[i]
         # Inner loop
@@ -42,8 +34,6 @@ array = [30, 44, 67, 5, 8, 9, 53]
             
 # Let sort this array
 insertion_sort(array)
-# Insertion sort did inplace sort
+# Insertion sort did in-place sort
 print(array)
-
-
 

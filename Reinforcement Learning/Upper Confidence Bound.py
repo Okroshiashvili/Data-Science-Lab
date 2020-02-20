@@ -1,10 +1,3 @@
-"""
-Created on Sun Mar  4 2018
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -125,6 +118,7 @@ plt.title('Histogram of ads selections')
 plt.xlabel('Ads')
 plt.ylabel('Number of times each ads was selected')
 plt.show()
+
 
 
 

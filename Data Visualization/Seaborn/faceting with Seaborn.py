@@ -1,13 +1,9 @@
-"""
-Created on Sat May 18 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
 """
 Data Link:
+
     https://www.kaggle.com/thec03u5/fifa-18-demo-player-dataset
 
 
@@ -20,8 +16,6 @@ and combining those subplots into a single figure.
 """
 
 
-
-
 import pandas as pd
 import numpy as np
 import re
@@ -29,14 +23,15 @@ import seaborn as sns
 pd.set_option('max_columns',None)
 
 
+# Read data
+footballers = pd.read_csv('data/CompleteDataset.csv', index_col=0)
 
-footballers = pd.read_csv('CompleteDataset.csv', index_col=0)
 
 
+### Some data pre-processing steps.
 
-# Some data pre-processing steps.
-
-df = footballers.copy()
+# Make a copy
+df = footballers.copy(deep=True)
 
 df['Unit'] = footballers['Value'].str[-1]
 
@@ -76,11 +71,10 @@ g.map(sns.kdeplot, "Overall")
 
 
 
-# FacetGrif for all positions
+# FacetGrid for all positions
 
 g = sns.FacetGrid(df, col='position', col_wrap=6)
 g.map(sns.kdeplot, 'Overall')
-
 
 
 

@@ -1,8 +1,3 @@
-"""
-Created on Thu May 16 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -11,8 +6,6 @@ Data Link:
     https://www.kaggle.com/zynicide/wine-reviews
     
 """
-
-
 
 
 
@@ -38,13 +31,11 @@ sns.kdeplot(df.query('price < 200').price)
 sns.kdeplot(df[df['price'] < 20].loc[:,['price','points']].dropna().sample(5000))
 
 
-
 # Histogram
 sns.distplot(df['points'], bins=10, kde=False)
 
 
 # Joinplot
-
 sns.jointplot(x='price', y='points', data=df[df['price'] < 100])
 
 sns.jointplot(x='price', y='points', data=df[df['price'] < 100], kind='hex', 
@@ -58,7 +49,6 @@ new_df = df[df.variety.isin(df.variety.value_counts().head(5).index)]
 sns.boxplot(x='variety', y='points', data=new_df)
 
 sns.violinplot(x='variety', y='points', data=new_df)
-
 
 
 

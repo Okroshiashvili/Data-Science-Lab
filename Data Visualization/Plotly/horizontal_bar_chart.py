@@ -1,8 +1,5 @@
-"""
-Created on Sat Feb 16 2019
 
-@author: Nodar Okroshiashvili
-"""
+
 
 import plotly.offline as pyo
 import plotly.graph_objs as go
@@ -13,12 +10,12 @@ df = pd.read_csv('data/mocksurvey.csv', index_col = 0)
 
 
 
-#       If you want simple bar chart uncomment this
+# # If you want simple bar chart uncomment this
 
-## This is for simple bar chart
-#
-## Create trace as a list comprehension
-#data = [go.Bar(x = df.index,
+# # This is for simple bar chart
+
+# # Create trace as a list comprehension
+# data = [go.Bar(x = df.index,
 #               y = df[response],
 #               name = response) for response in df.columns]
 

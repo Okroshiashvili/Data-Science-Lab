@@ -1,9 +1,3 @@
-"""
-Created on Mon Jun 24 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -12,18 +6,16 @@ Created on Mon Jun 24 2019
 Bellman-Ford Algorithm
 
 
-Compared to Dijkstra's algorithm, Bellman-Forsd is slower but
+Compared to Dijkstra's algorithm, Bellman-Ford is slower but
 Bellman-Ford algorithm can handle negative weights.
 
-Dijkstra's algorithm choose edges gredely with the lowest cost:
-Bellman-Ford relaxes all the adges at the same time for V-1 iteration.
+Dijkstra's algorithm choose edges greedily with the lowest cost:
+Bellman-Ford relaxes all the edges at the same time for V-1 iteration.
 
 Running time for Bellman-Ford is O(V*E)
 
 
 """
-
-
 
 
 import sys
@@ -39,6 +31,7 @@ class Node:
         self.min_distance = sys.maxsize
         
 
+
 class Edge:
     
     def __init__(self, weight, start_vertex, target_vertex):
@@ -52,7 +45,7 @@ class Bellman_Ford:
     
     HAS_CYCLE = False
     
-    def Calculate_Shortest_Path(self, vertex_list, edge_list, start_vertex):
+    def calculate_shortest_path(self, vertex_list, edge_list, start_vertex):
         start_vertex.min_distance = 0
         
         for i in range(0, len(vertex_list) - 1):
@@ -73,13 +66,15 @@ class Bellman_Ford:
                 Bellman_Ford.HAS_CYCLE = True
                 return
     
+
     def has_cycle(self, edge):
         if (edge.start_vertex.min_distance + edge.weight) < edge.target_vertex.min_distance:
             return True
         else:
             return False
     
-    def Get_Shortest_Path(self, target_vertex):
+
+    def get_shortest_path(self, target_vertex):
         
         if not Bellman_Ford.HAS_CYCLE:
             print('Shortest path exist with the values: ', target_vertex.min_distance)
@@ -106,7 +101,6 @@ node8 = Node("H")
 
 
 
-
 edge1 = Edge(5,node1,node2)
 edge2 = Edge(8,node1,node8)
 edge3 = Edge(9,node1,node5)
@@ -126,7 +120,6 @@ edge16 = Edge(9,node4,node7)
 edge17 = Edge(1,node1,node2)
 edge18 = Edge(1,node2,node3)
 edge19 = Edge(-3,node3,node1)
-
 
 
 
@@ -155,10 +148,8 @@ edgeList = (edge17, edge18, edge19)
 
 algorithm = Bellman_Ford()
 
-algorithm.Calculate_Shortest_Path(vertexList, edgeList, node1)
+algorithm.calculate_shortest_path(vertexList, edgeList, node1)
 
-algorithm.Get_Shortest_Path(node7)
-
-
+algorithm.get_shortest_path(node7)
 
 

@@ -1,8 +1,5 @@
-"""
-Created on Sun Feb 10 2019
 
-@author: Nodar Okroshiashvili
-"""
+
 
 """
 Scrape bitcoin charts website and plots teal time price movement for
@@ -31,8 +28,8 @@ from pytz import timezone
 f=figure(x_axis_type='datetime')
 
 # Create webscraping function
-def extract_value(currancy_name="bitstampUSD"):
-    r=requests.get("https://bitcoincharts.com/markets/"+currancy_name+".html",
+def extract_value(currency_name="bitstampUSD"):
+    r=requests.get("https://bitcoincharts.com/markets/"+currency_name+".html",
                    headers={'User-Agent':'Mozilla/5.0'})
     c = r.content
     soup=BeautifulSoup(c,"html.parser")
@@ -74,7 +71,7 @@ f.xaxis.major_label_orientation=radians(90)
 # Create Select widget
 options=[("bitstampUSD","Bitstam USD"),("bitstampEUR","Bitstamp EUR")]
 
-select=Select(title="Currancy Name",value="bitstampUSD",options=options)
+select=Select(title="Currency Name",value="bitstampUSD",options=options)
 select.on_change("value",update_intermediate)
 
 # Add figure to curdoc

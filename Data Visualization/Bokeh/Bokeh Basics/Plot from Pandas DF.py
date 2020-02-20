@@ -1,16 +1,11 @@
+
+
+
 """
-Created on Sun Feb  3 2019
-
-@author: Nodar Okroshiashvili
+Making a basic Bokeh line graph
 """
 
 
-
-# Making a basic Bokeh line graph
-
-
-
-# Importing Bokeh and Pandas
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
 import pandas

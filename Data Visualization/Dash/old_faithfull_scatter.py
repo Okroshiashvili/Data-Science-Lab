@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 17 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -66,4 +60,6 @@ if __name__ == '__main__':
 
 The scatter plot shows that as geyser eruption duration lasts longer then
 the interval increases between eruption. For example if one eruption has
-duration 5 minute then the next eruption will occure after 75 minute
+duration 5 minute then the next eruption will occur after 75 minute
+
+"""

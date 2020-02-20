@@ -1,18 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 17 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
 """
-
 More convenient way to insert multiple Plotly plots into Dash
-
-
 """
 
 
@@ -77,17 +67,17 @@ fig.append_trace(trace_2,2,1)
 fig['layout'].update(title = 'Scatter Plots', showlegend=True)
 
 
-## Create layout
-#layout = go.Layout(title = 'My Scatter Plots',
+# # Create layout
+# layout = go.Layout(title = 'My Scatter Plots',
 #                   xaxis = dict(title = 'X axis'),
 #                   xaxis2 = dict(title = 'X axis 2'),
 #                   yaxis = dict(title = 'Y axis'),
 #                   yaxis2 = dict(anchor = 'x2'))
-#
-#
-#
-## Figure object
-#fig = go.Figure(data = data, layout = layout)
+
+
+
+# # Figure object
+# fig = go.Figure(data = data, layout = layout)
 
 
 
@@ -101,6 +91,4 @@ app.layout = html.Div(children = [
 # Run the application
 if __name__ == '__main__':
     app.run_server()
-
-
 

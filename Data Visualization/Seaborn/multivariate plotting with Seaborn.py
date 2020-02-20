@@ -1,13 +1,9 @@
-"""
-Created on Sat May 18 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
 """
 Data Link:
+
     https://www.kaggle.com/thec03u5/fifa-18-demo-player-dataset
 
 """
@@ -78,10 +74,6 @@ sns.lmplot(x='Value', y='Overall', markers=['o','x','*'], hue='position',
 
 
 
-
-
-
-
 ###       Grouped Box Plot       ###
 
 
@@ -115,13 +107,13 @@ by mixing and matching the information provided in the old ones.
 
 ###     Heatmap or Correlation plot     ###
 
+
 f = (df.loc[:,['Acceleration', 'Aggression', 'Agility', 'Balance', 'Ball control']]
         .applymap(lambda v: int(v) if str.isdecimal(v) else np.nan).dropna()).corr()
 
 
 
 sns.heatmap(f, annot=True)
-
 
 
 
@@ -141,8 +133,6 @@ f = f.sample(200)
 
 
 parallel_coordinates(f, 'position')
-
-
 
 
 

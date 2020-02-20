@@ -1,10 +1,3 @@
-"""
-Created on Sat Jun 22 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -14,7 +7,6 @@ Breadth First Search
 """
 
 
-
 class Node:
     
     def __init__(self, name):
@@ -22,7 +14,7 @@ class Node:
         self.adjacencyList = []
         self.visited = False
         self.predecessor = None
-        
+
 
 
 class Breadth_First_Search:
@@ -67,8 +59,6 @@ node4.adjacencyList.append(node5)
 bfs = Breadth_First_Search()
 
 bfs.bfs(node1)
-
-
 
 
 

@@ -1,15 +1,11 @@
+
+
+
 """
-Created on Sat Feb  9 2019
-
-@author: Nodar Okroshiashvili
+Serve Random Number Generation in Bokeh Server
 """
 
 
-#      Serve Random Number Generation in Bokeh Server
-
-
-
-#import libraries
 from bokeh.io import curdoc
 from bokeh.models import ColumnDataSource
 from bokeh.plotting import figure

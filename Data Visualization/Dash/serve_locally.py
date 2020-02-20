@@ -1,13 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 17 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 """
-
 To serve dash app locally and not ot send any sensitive information
 online for processing, put this code before running server
 
@@ -21,4 +15,5 @@ app.scripts.config.serve_locally = True
 # Run the application
 if __name__ == '__main__':
     app.run_server()
+
 

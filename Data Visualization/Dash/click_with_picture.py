@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 24 2019
 
-@author: Nodar Oroshiashvili
-"""
 
 
 """
@@ -35,7 +30,7 @@ app = dash.Dash()
 
 
 
-# Read the iamge files
+# Read the image files
 def encode_image(image_file):
     encoded = base64.b64encode(open(image_file, 'rb').read())
     return 'data:image/png;base64,{}'.format(encoded.decode())

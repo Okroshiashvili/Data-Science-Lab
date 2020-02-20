@@ -1,5 +1,6 @@
 import heapq
 
+
 class Vertex():
 
 	def __init__(self, name):
@@ -7,22 +8,26 @@ class Vertex():
 		self.visited = False
 		self.predecessor = None
 		self.adjacencyList = []
-		
+
+
 	def __str__(self):
 		return self.name
-		
+
+
 class Edge():
 
 	def __init__(self, weight, startVertex, targetVertex):
 		self.weight = weight
 		self.startVertex = startVertex
 		self.targetVertex = targetVertex	
-		
+
+
 	def __lt__(self, other):
 		selfPriority = self.weight;
 		otherPriority = other.weight;
 		return selfPriority < otherPriority;
-	
+
+
 class PrimsJarnik():
 
 	def __init__(self, unvisitedList):
@@ -30,7 +35,8 @@ class PrimsJarnik():
 		self.spanningTree = []
 		self.edgeHeap = []
 		self.fullCost = 0
-		
+
+
 	def calculateSpanningTree(self, vertex):
 		self.unvisitedList.remove(vertex);
 		while self.unvisitedList:
@@ -48,11 +54,15 @@ class PrimsJarnik():
 				vertex = minEdge.targetVertex
 				self.unvisitedList.remove(vertex)
 
+
 	def getSpanningTree(self):
 		return self.spanningTree
-		
+
+
 	def getCost(self):
 		return self.fullCost
+
+
 
 
 vertexA = Vertex("A")
@@ -121,3 +131,4 @@ vertexG.adjacencyList.append(edgeGF)
 algorithm = PrimsJarnik(unvisitedList)
 algorithm.calculateSpanningTree(vertexD)
 print(algorithm.getCost())
+

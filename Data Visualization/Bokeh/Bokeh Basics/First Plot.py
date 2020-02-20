@@ -1,16 +1,11 @@
+
+
+
 """
-Created on Sun Feb  3 2019
-
-@author: Nodar Okroshiashvili
+Making a basic Bokeh line graph
 """
 
 
-
-# Making a basic Bokeh line graph
-
-
-
-# Importing Bokeh
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
 
@@ -31,9 +26,9 @@ f = figure()
 # Create line plot
 f.line(x,y)
 # The line below plots triangles instead of dots
-# If you run this whole sript you'll get line and triangle plot
+# If you run this whole script you'll get line and triangle plot
 # You can change triangle by circle or any other
-# See exapmles here: https://bokeh.pydata.org/en/latest/docs/user_guide/plotting.html
+# See examples here: https://bokeh.pydata.org/en/latest/docs/user_guide/plotting.html
 f.triangle(x,y,size=20)
 
 # Write the plot in the figure object

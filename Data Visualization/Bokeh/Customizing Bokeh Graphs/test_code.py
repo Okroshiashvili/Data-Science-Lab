@@ -1,10 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb  3 13:07:45 2019
 
-@author: nodo
-"""
+
 
 #Plotting flower species
  

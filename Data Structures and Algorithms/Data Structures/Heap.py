@@ -1,8 +1,3 @@
-"""
-Created on Mon Jun 17 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -10,10 +5,10 @@ Created on Mon Jun 17 2019
 Heaps are the most efficient implementation of priority queues.
 
 Heaps are basically binary tree. There are two main binary heaps:
-    min heap and max heap.
+min heap and max heap.
     
 In min heap, root node is always less or equal to its child or children
-and in max heap root node is always greater than or equalto its children.
+and in max heap root node is always greater than or equal to its children.
 
 
 """
@@ -26,19 +21,30 @@ class Heap:
     
     
     def __init__(self):
-        self.heap = [0]*Heap.HEAP_SIZE
+        self.heap = [0] * Heap.HEAP_SIZE
         self.currentPosition = -1
         
-    
-    # Checks if the Heap capacity is full
+
     def IsFull(self):
+        """
+        Checks if heap capacity is full
+        
+        Returns:
+            True or False
+        """
         if self.currentPosition == Heap.HEAP_SIZE:
             return True
         else:
             return False
         
     
-    def Insert(self, item):
+    def Insert(self, item: int):
+        """
+        Insert new value into a heap
+        
+        Args:
+            item: The value to insert
+        """
         if self.IsFull():
             print('Heap is full...')
             return
@@ -47,8 +53,11 @@ class Heap:
         self.heap[self.currentPosition] = item
         self.FixUp(self.currentPosition)
         
-    # FixUp function makes sure there is no violation in the heap
+
     def FixUp(self, index):
+        """
+        This function makes sure there is no violation in the heap
+        """
         parentIndex = int((index - 1)/2)
         
         while parentIndex >= 0 and self.heap[parentIndex] < self.heap[index]:
@@ -60,6 +69,9 @@ class Heap:
             
     
     def heapsort(self):
+        """
+        Sorts the heap
+        """
         for i in range(0, self.currentPosition + 1):
             temp = self.heap[0]
             print('%d ' % temp)
@@ -68,6 +80,9 @@ class Heap:
             self.FixDown(0, self.currentPosition - i - 1)
             
     def FixDown(self, index, upto):
+        """
+        This function makes sure there is no violation in the heap        
+        """
         
         while index <= upto:
             
@@ -97,7 +112,7 @@ class Heap:
                     
 
 
-# Test our alogorithm
+# Test our algorithm
 
 heap = Heap()
 
@@ -116,9 +131,4 @@ heap.IsFull()
 
 
 heap.heapsort()
-
-
-
-
-
 

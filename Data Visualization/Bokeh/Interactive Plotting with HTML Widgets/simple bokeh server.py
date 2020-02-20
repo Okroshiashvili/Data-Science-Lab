@@ -1,8 +1,5 @@
-"""
-Created on Sat Feb  9 14:47:17 2019
 
-@author: nodo
-"""
+
 
 from bokeh.io import curdoc
 from bokeh.models.widgets import TextInput, Button, Paragraph
@@ -26,9 +23,5 @@ lay_out = layout([[button, text_input],[output]])
 
 
 curdoc().add_root(lay_out)
-
-
-
-
 
 

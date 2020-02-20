@@ -1,8 +1,3 @@
-"""
-Created on Sat Feb 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -15,7 +10,7 @@ import pandas as pd
 df = pd.read_csv('data/FremontBridgeBicycles.csv')
 
 
-# Conver "Date" columns into datetime series
+# Convert "Date" columns into datetime object
 df['Date'] = pd.to_datetime(df['Date'])
 
 # Add column for hour
@@ -53,5 +48,7 @@ fig = go.Figure(data = data, layout = layout)
 
 # Plot figure
 pyo.plot(fig, filename='fremont_bridge.html')
+
+
 
 

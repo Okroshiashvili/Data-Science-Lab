@@ -1,15 +1,8 @@
-"""
-Created on Sun Mar 11 2018
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
 """
-Natural Language Processing
+Restaurant Review Analysis
 
 """
 
@@ -21,6 +14,19 @@ Natural Language Processing
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import confusion_matrix
+
+import re
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+
+
 
 
 # Open the dataset
@@ -42,10 +48,6 @@ Our mission is to create model that will predict new review is positive or negat
 
 # Cleaning the texts
 
-
-# import libraries to clean the text
-
-import re
 
 # Firstly, we clean first observation and then by using for loop we'll do it 
 # for all observation
@@ -69,16 +71,12 @@ review = review.lower()
 
 
 # At third step we remove non-significant words
-# We need to import nltk library to remove unuseful words
+# We need to import nltk library to remove not useful words
 
-import nltk
-nltk.download('stopwords')
 
 # We need to split review into different words
 review = review.split() # It is now list
 
-# List comprehension to remove unnecessary words
-from nltk.corpus import stopwords
 
 """
 Here, also we incorporate fourth step which is stemming.
@@ -86,9 +84,8 @@ This means we take the root of the words, or we convert words into original form
 
 """
 
-from nltk.stem.porter import PorterStemmer
-ps = PorterStemmer()
 
+ps = PorterStemmer()
 
 
 review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))]
@@ -103,16 +100,6 @@ review = ' '.join(review)
 
 
 # Now let apply all these steps to the whole dataset
-
-# import libraries
-import re
-import nltk
-nltk.download('stopwords')
-from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
-ps = PorterStemmer()
-
-
 
 corpus = []
 for i in range(0, 1000):
@@ -140,15 +127,12 @@ We'll create The Bag of Words Model through the tokenization
 
 
 # We have to import count vectorization class
-
-from sklearn.feature_extraction.text import CountVectorizer
-
 # Create class object
 cv = CountVectorizer(max_features = 1500)
 
 # Apply the model to our corpus
 # We'll create now sparse matrix, putting all the different words in different columns 
-X = cv.fit_transform(corpus).toarray()  
+X = cv.fit_transform(corpus).toarray()
 
 """
 Our sparse matrix has 1000 line and 1565 words in it.
@@ -179,19 +163,12 @@ corresponds to one word for those specific reviews.
 # Let apply Naive Bayes model to the bag of words
 
 
-
-from sklearn.model_selection import train_test_split
-
 # Splitting the dataset into the Training set and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
 
 
 
-
-
 # Fitting Naive Bayes to the Training set
-from sklearn.naive_bayes import GaussianNB
-
 # Define classifier object
 classifier = GaussianNB()
 
@@ -205,9 +182,6 @@ y_pred = classifier.predict(X_test)
 
 
 # Make the Confusion Matrix
-
-from sklearn.metrics import confusion_matrix
-
 # Create confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 

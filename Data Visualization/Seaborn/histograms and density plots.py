@@ -1,9 +1,3 @@
-"""
-Created on Thu May 16 2019
-
-@author: Nodar Okroshiashvili
-""""
-
 
 
 
@@ -32,10 +26,6 @@ sns.kdeplot(data=iris_data['Petal Length (cm)'], shade=True)
 # We can create two-dimensional kde plot
 sns.jointplot(x=iris_data['Petal Length (cm)'],
               y=iris_data['Sepal Width (cm)'], kind='kde')
-
-
-
-
 
 
 

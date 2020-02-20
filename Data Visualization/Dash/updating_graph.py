@@ -1,14 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 24 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
 """
-
 To the right of the scatter there is line, which represents acceleration
 of a selected vehicle.
 
@@ -16,7 +9,7 @@ The steeper the line, the quicker acceleration.
 
 
 
-Data has acceleration column thet represents acceleration in seconds. We need
+Data has acceleration column that represents acceleration in seconds. We need
 to represent this as a slope. For this I use the followinf formula
 
 
@@ -71,7 +64,7 @@ app.layout = html.Div([
                                          hovermode = 'closest')
                                  }
                            )],style={'width':'50%', 'display':'inline-block'}),
-      html.Div([# this Div contaions our output graph and vehicle stats
+      html.Div([# this Div contains our output graph and vehicle stats
               dcc.Graph(
                       id = 'mpg_line',
                       figure = {
@@ -136,5 +129,6 @@ def callback_stats(hoverData):
 # Run the application
 if __name__ == '__main__':
     app.run_server()
+
 
 

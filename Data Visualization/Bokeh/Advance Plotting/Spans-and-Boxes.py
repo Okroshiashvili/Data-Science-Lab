@@ -1,19 +1,17 @@
-"""
-Created on Mon Feb  4 20:34:55 2019
 
-@author: Nodar Okroshiashvili
+
 
 """
+Multiple/grid plots with gridplot
+"""
 
 
-
-#Multiple/grid plots with gridplot
 from bokeh.plotting import figure, output_file, show
 from bokeh.layouts import gridplot
 from bokeh.models.annotations import Span, BoxAnnotation
 
 
-#Prepare the output file
+# Prepare the output file
 output_file("layout.html")
 
 # Define the data
@@ -50,5 +48,6 @@ f = gridplot([[f1, f2], [None, f3]])
 
 # show the results
 show(f)
+
 
 

@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Feb 23 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 """

@@ -1,32 +1,39 @@
 
+
+
 class Vertex(object):
 
 	def __init__(self, name):
 		self.name = name;
 		self.node = None; # !!!!
-		
+
+
 class Node(object):
 
 	def __init__(self, height, nodeId, parentNode):
 		self.height = height;
 		self.nodeId = nodeId;
 		self.parentNode = parentNode;
-		
+
+
 class Edge(object):
 	
 	def __init__(self, weight, startVertex, targetVertex):
 		self.weight = weight;
 		self.startVertex = startVertex;
 		self.targetVertex = targetVertex;
-		
+
+
 	def __cmp__(self, otherEdge):
 		return self.cmp(self.weight, otherEdge.weight);
-		
+
+
 	def __lt__(self, other):
 		selfPriority = self.weight;
 		otherPriority = other.weight;
 		return selfPriority < otherPriority;
-		
+
+
 class DisjointSet(object):
 
 	def __init__(self, vertexList):
@@ -35,7 +42,8 @@ class DisjointSet(object):
 		self.nodeCount = 0;
 		self.setCount = 0;
 		self.makeSets(vertexList);
-		
+
+
 	def find(self, node):
 	
 		currentNode = node;
@@ -53,6 +61,7 @@ class DisjointSet(object):
 			
 		return root.nodeId;
 	
+
 	def merge(self, node1, node2):
 	
 		index1 = self.find(node1);
@@ -71,18 +80,21 @@ class DisjointSet(object):
 		else:
 			root2.parentNode = root1;
 			root1.height = root1.height + 1;
-		
+
+
 	def makeSets(self, vertexList):
 		for v in vertexList:
 			self.makeSet(v);
-			
+
+
 	def makeSet(self, vertex):
 		node = Node(0, len(self.rootNodes),None);
 		vertex.node = node;
 		self.rootNodes.append(node);
 		self.setCount = self.setCount + 1;
 		self.nodeCount = self.nodeCount + 1;
-		
+
+
 class KruskalAlgorithm(object):
 
 	def spanningTree(self, vertexList, edgeList):
@@ -103,7 +115,10 @@ class KruskalAlgorithm(object):
 				
 		for edge in spanningTree:
 			print(edge.startVertex.name," - ", edge.targetVertex.name);
-			
+
+
+
+
 vertex1 = Vertex("a");
 vertex2 = Vertex("b");
 vertex3 = Vertex("c");

@@ -1,17 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 25 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
 """
-
 Using Pandas DataReader, extracts the close price of stocks 
 and visualize them.
-
 """
 
 
@@ -113,7 +105,5 @@ def upgrade_graph(n_clicks, stock_ticker, start_date, end_date):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-
-
 
 

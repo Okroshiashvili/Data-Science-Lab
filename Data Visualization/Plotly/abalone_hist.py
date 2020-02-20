@@ -1,8 +1,3 @@
-"""
-Created on Sat Feb 16 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -29,6 +24,6 @@ layout = go.Layout(
 # Figure object
 fig = go.Figure(data = data, layout = layout)
 
-# Plor figure
+# Plot figure
 pyo.plot(fig, filename='Abalone.html')
 

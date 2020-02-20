@@ -1,8 +1,3 @@
-"""
-Created on Thu May 16 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -24,16 +19,11 @@ plt.title('Daily Global Streams of Popular Songs in 2017-2018')
 sns.lineplot(data=spotify)
 
 
-
-
 # Plot Subset of data
 plt.figure(figsize=(10,6))
 plt.title('Daily Global Streams of Popular Songs in 2017-2018')
-sns.lineplot(data = spotify['Shape of You'], label = 'Shepe of You')
+sns.lineplot(data = spotify['Shape of You'], label = 'Shape of You')
 sns.lineplot(data = spotify['Despacito'], label = 'Despacito')
 plt.xlabel('Date')
-
-
-
-
+plt.show()
 

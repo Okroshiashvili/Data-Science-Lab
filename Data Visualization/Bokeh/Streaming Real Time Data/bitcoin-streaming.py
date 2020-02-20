@@ -1,9 +1,3 @@
-"""
-Created on Sat Feb  9 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -17,10 +11,10 @@ from datetime import datetime
 from math import radians
 from pytz import timezone
 
-#create figure
+# Create figure
 f=figure(x_axis_type='datetime')
 
-#create webscraping function
+# Create webscraping function
 def extract_value():
     r=requests.get("https://coinmarketcap.com/currencies/bitcoin/",
                    headers={'User-Agent':'Mozilla/5.0'})
@@ -30,14 +24,14 @@ def extract_value():
     value_net=float(value_raw[1296].text)
     return value_net
 
-#create ColumnDataSource
+# Create ColumnDataSource
 source=ColumnDataSource(dict(x=[],y=[]))
 
-#create glyphs
+# Create glyphs
 f.circle(x='x',y='y',color='olive',line_color='brown',source=source)
 f.line(x='x',y='y',source=source)
 
-#create periodic function
+# Create periodic function
 def update():
     new_data=dict(x=[datetime.now(tz=timezone('Asia/Tbilisi'))],y=[extract_value()])
     source.stream(new_data,rollover=200)
@@ -58,7 +52,8 @@ years=["%Y-%m-%d-%H-%m-%S"],
 
 f.xaxis.major_label_orientation=radians(90)
 
-#add figure to curdoc and configure callback
+# Add figure to curdoc and configure callback
 curdoc().add_root(f)
 curdoc().add_periodic_callback(update,2000)
+
 

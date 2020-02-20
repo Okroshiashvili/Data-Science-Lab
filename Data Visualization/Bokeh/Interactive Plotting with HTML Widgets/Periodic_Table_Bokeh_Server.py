@@ -1,12 +1,9 @@
+
+
+
 """
-Created on Sun Feb  3 2019
-
-@author: Nodar Okroshiashvili
+Plot Periodic Table of Elements
 """
-
-
-
-# Plot Periodic Table of Elements
 
 
 from bokeh.plotting import figure
@@ -73,7 +70,7 @@ f.yaxis.axis_label = "Boiling Point"
 
 
 
-# Define average boing temperature for gas, liquid, and solid
+# Define average boiling temperature for gas, liquid, and solid
 gas_average = sum(gas.data['boiling point'])/len(gas.data['boiling point'])
 liquid_average = sum(liquid.data['boiling point']) / len(liquid.data['boiling point'])
 solid_average = sum(solid.data['boiling point']) / len(solid.data['boiling point'])
@@ -94,8 +91,8 @@ f.add_layout(solid_span)
 
 
 
-#Create a function that updates the location attribute value for span_solid_boil span
-#Also note that select.value returns values as strings
+# Create a function that updates the location attribute value for span_solid_boil span
+# Also note that select.value returns values as strings
 # so we need to convert the returned value to float
 def update_span(attr, old, new):
     solid_span.location = float(select.value)
@@ -122,3 +119,4 @@ lay_out = layout([[select]])
 curdoc().add_root(f)
 curdoc().add_root(lay_out)
     
+

@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Feb 28 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -61,4 +54,6 @@ def update_value(value_list):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
+
+
 

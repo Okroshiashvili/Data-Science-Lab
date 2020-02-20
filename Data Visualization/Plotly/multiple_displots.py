@@ -1,8 +1,4 @@
-"""
-Created on Sat Feb 16 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 import plotly.offline as pyo
@@ -32,6 +28,5 @@ fig = ff.create_distplot(hist_data=hist_data,
 
 # Plot figure
 pyo.plot(fig, filename = 'multiple_displot.html')
-
 
 

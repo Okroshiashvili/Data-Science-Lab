@@ -1,5 +1,30 @@
 # Data Structures and Algorithms
 
-There are two folders, which contains data structures and algorithms implemented in Python.
+There are algorithms and data structures implemented in Python
 
-They are work in progress, but I do hope they will help beginners to catch the intuition.
+## Algorithms
+
+* Bellman-Ford
+* Breadth First Search
+* Bubble Sort
+* Depth First Search
+* Dijkstra
+* Insertion Sort
+* Kruskal
+* Merge Sort
+* Prims
+* Quick Sort
+* Selection Sort
+
+## Data Structures
+
+* AVL tree
+* Red-Black Tree
+* Binary Search Tree
+* Hashtable
+* Heap
+* Queue
+* Single Linked List
+* Stack
+* Ternary Search Tree
+* Tries

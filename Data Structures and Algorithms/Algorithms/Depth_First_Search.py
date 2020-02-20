@@ -1,9 +1,3 @@
-"""
-Created on Mon Jun 24 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -12,7 +6,6 @@ Created on Mon Jun 24 2019
 Depth First Search
 
 """
-
 
 
 class Node:
@@ -53,7 +46,4 @@ node4.adjacencyList.append(node5)
 dfs = Depth_First_Search()
 
 dfs.dfs(node1)
-
-
-
 

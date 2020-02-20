@@ -1,16 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 26 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
 """
 Reflects how many time we refresh the page.
-In other words app layout updates utomaticlly while refreshing the page
+In other words app layout updates automatically while refreshing the page
 
 """
 
@@ -48,7 +41,4 @@ app.layout = refresh_layout
 # Run the application
 if __name__ == '__main__':
     app.run_server()
-
-
-
 

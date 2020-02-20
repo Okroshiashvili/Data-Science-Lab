@@ -1,15 +1,9 @@
-"""
-Created on Sat May 18 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
 """
 Data link:
+
     https://www.kaggle.com/zynicide/wine-reviews
     
 """
@@ -18,7 +12,8 @@ Data link:
 
 
 import pandas as pd
-
+from plotnine import *
+from plotnine import options
 
 
 df = pd.read_csv("winemag-data-130k-v2.csv", index_col=0)
@@ -26,10 +21,6 @@ df = pd.read_csv("winemag-data-130k-v2.csv", index_col=0)
 
 
 # Start plotting
-
-from plotnine import *
-from plotnine import options
-
 
 
 top_wines = df[df['variety'].isin(df['variety'].value_counts().head(5).index)]
@@ -99,6 +90,5 @@ options.figure_size=(10,10)
 + geom_bin2d(bins=20)
 + coord_fixed(ratio=1)
 + ggtitle('Top Five Most Common Wine Variety Points Awarded'))
-
 
 

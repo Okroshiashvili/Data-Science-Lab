@@ -1,9 +1,3 @@
-"""
-Created on Wed May  8 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -35,5 +29,6 @@ array = [90, 35, 60, 7, 2, 3, 89]
 selection_sort(array)         
 # Print sorted array
 print(array)
+
 
 

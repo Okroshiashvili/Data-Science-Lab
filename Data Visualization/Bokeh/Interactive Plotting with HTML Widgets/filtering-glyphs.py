@@ -1,13 +1,6 @@
-"""
-Created on Sat Feb  9 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
-
-#importing libraries
 from bokeh.plotting import figure
 from bokeh.io import curdoc
 from bokeh.models.annotations import LabelSet
@@ -74,6 +67,5 @@ lay_out=layout([[select],[slider]])
 # Add layout to curdoc
 curdoc().add_root(f)
 curdoc().add_root(lay_out)
-
 
 

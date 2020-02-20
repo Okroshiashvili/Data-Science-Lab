@@ -1,18 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 17 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
 """
-
 More convenient way to insert Plotly into Dash
-
-
 """
 
 

@@ -1,14 +1,12 @@
+
+
+
 """
-Created on Sat Feb 16 2019
-
-@author: Nodar Okroshiashvili
+Histogram of Arrhythmia dataset
 """
 
-
-#   Histogram of Arrhythmia dataset
 
 # Compares heights by gender
-
 
 import plotly.offline as pyo
 import plotly.graph_objs as go
@@ -43,5 +41,4 @@ fig = go.Figure(data = data, layout = layout)
 
 # Plot figure
 pyo.plot(fig, filename = 'arrhythmia_histogram.html')
-
 

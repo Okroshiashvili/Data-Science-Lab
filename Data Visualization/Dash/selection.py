@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 24 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -66,4 +60,5 @@ def callback_image(selectedData):
 # Run the application
 if __name__ == '__main__':
     app.run_server()
+
 

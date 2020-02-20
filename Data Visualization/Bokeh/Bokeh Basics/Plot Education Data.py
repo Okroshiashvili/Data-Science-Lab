@@ -1,12 +1,6 @@
-"""
-Created on Sun Feb  3 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
-# Import Libraries
 import pandas as pd
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
@@ -34,7 +28,5 @@ f.circle(x,y, size=8)
 
 # Show Plot
 show(f)
-
-
 
 

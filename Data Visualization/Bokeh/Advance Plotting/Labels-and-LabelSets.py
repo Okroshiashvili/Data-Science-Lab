@@ -1,8 +1,3 @@
-"""
-Created on Mon Feb  4 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -38,7 +33,5 @@ f.add_layout(labels)
 f.circle(x="average_grades", y="exam_grades", source=source, size=8)
 
 show(f)
-
-
 
 

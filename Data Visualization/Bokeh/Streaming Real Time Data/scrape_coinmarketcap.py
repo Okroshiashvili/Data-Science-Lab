@@ -1,13 +1,9 @@
+
+
+
 """
-Created on Sat Feb  9 19:53:06 2019
-
-@author: nodo
+Scrape coinmarketcap.com
 """
-
-
-#       Scrape coinmarketcap.com
-
-
 
 
 import requests
@@ -24,6 +20,5 @@ value_raw=soup.find_all("span")
 
 
 value_net=float(value_raw[1296].text)
-
 
 

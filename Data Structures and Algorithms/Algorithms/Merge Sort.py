@@ -1,10 +1,3 @@
-"""
-Created on Mon Jun 24 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -46,4 +39,6 @@ if __name__ == "__main__":
    merge_sort(nums)
    print(nums)
   
+
+
 

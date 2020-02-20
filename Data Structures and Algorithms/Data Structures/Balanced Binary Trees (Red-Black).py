@@ -1,34 +1,22 @@
-"""
-Created on Sun Jun 16 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
 """
 
-Red-Black trees are almost excatly the same as AVL trees.
+Red-Black trees are almost exactly the same as AVL trees.
 
 Red-Black trees have red-black property instead of heights and if this
 property is violated we need to do some rotaions or recolor the nodes.
 
 Reb-Black tree principles:
-    Each node is either red or black
-    The root node is always black
-    All leaves (NIL or NULL) are black
-    Every red ode must have two black child nodes and no other children
+    Each node is either red or black.
+    The root node is always black.
+    All leaves (NIL or NULL) are black.
+    Every red node must have two black child nodes and no other children.
     Every path from a given node to any of its descendent NILL/NULL nodes
-        contains the same number of black nodes
+    contains the same number of black nodes.
         
 """
-
-
-
-
-
-
 
 
 
@@ -36,16 +24,17 @@ import sys
 
 # data structure that represents a node in the tree
 class Node():
+
     def __init__(self, data):
         self.data = data  # holds the key
         self.parent = None #pointer to the parent
-        self.left = None # pointer to left child
-        self.right = None #pointer to right child
+        self.left = None # pointer to the left child
+        self.right = None #pointer to the right child
         self.color = 1 # 1 . Red, 0 . Black
 
 
-# class RedBlackTree implements the operations in Red Black Tree
 class RedBlackTree():
+
     def __init__(self):
         self.TNULL = Node(0)
         self.TNULL.color = 0
@@ -79,7 +68,7 @@ class RedBlackTree():
             return self.__search_tree_helper(node.left, key)
         return self.__search_tree_helper(node.right, key)
 
-    # fix the rb tree modified by the delete operation
+    # fix the red-black tree modified by the delete operation
     def __fix_delete(self, x):
         while x != self.root and x.color == 0:
             if x == x.parent.left:
@@ -193,7 +182,7 @@ class RedBlackTree():
     def  __fix_insert(self, k):
         while k.parent.color == 1:
             if k.parent == k.parent.parent.right:
-                u = k.parent.parent.left # uncle
+                u = k.parent.parent.left
                 if u.color == 1:
                     # case 3.1
                     u.color = 0
@@ -210,7 +199,7 @@ class RedBlackTree():
                     k.parent.parent.color = 1
                     self.left_rotate(k.parent.parent)
             else:
-                u = k.parent.parent.right # uncle
+                u = k.parent.parent.right
 
                 if u.color == 1:
                     # mirror case 3.1
@@ -249,17 +238,17 @@ class RedBlackTree():
     
     # Pre-Order traversal
     # Node.Left Subtree.Right Subtree
-    def preorder(self):
+    def pre_order_traversal(self):
         self.__pre_order_helper(self.root)
 
     # In-Order traversal
     # left Subtree . Node . Right Subtree
-    def inorder(self):
+    def in_order_traversal(self):
         self.__in_order_helper(self.root)
 
     # Post-Order traversal
     # Left Subtree . Right Subtree . Node
-    def postorder(self):
+    def post_order_traversal(self):
         self.__post_order_helper(self.root)
 
     # search the tree for the key k
@@ -421,14 +410,10 @@ red_black_tree.pretty_print()
 
 
 
-
 ## Resources
 #
 #https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
 #
 #https://algorithmtutor.com/Data-Structures/Tree/Red-Black-Trees/
-
-
-
 
 

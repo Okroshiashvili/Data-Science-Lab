@@ -1,18 +1,11 @@
+
+
+
 """
-Created on Sun Feb  3 16:42:48 2019
-
-@author: Nodar Okroshiashvili
+Full code for Iris dataset
 """
 
 
-
-# Full code for Iris dataset
-
-
-
-
-
-#Importing libraries
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
 # DataFrame object
@@ -21,10 +14,10 @@ from bokeh.sampledata.iris import flowers
 from bokeh.models import Range1d, PanTool, ResetTool, HoverTool
 
 
-#Define the output file path
+# Define the output file path
 output_file("iris.html")
 
-#Create the figure object
+# Create the figure object
 f=figure()
 
 
@@ -40,12 +33,12 @@ f.toolbar.logo = None
 
 
 
-#Style the plot area
+# Style the plot area
 
 # Sets background width to 1100 pixels
 # Height to 650 pixels
 # Background color is "olive"
-# Background fill or color intensity or transparancy is 0.3
+# Background fill or color intensity or transparency is 0.3
 f.plot_width=1100
 f.plot_height=650
 f.background_fill_color="olive"
@@ -53,7 +46,7 @@ f.background_fill_alpha=0.3
 
 
 
-#Style the title
+# Style the title
 
 # Sets the title
 f.title.text="Iris Morphology"
@@ -63,12 +56,12 @@ f.title.text_color="olive"
 f.title.text_font="times"
 # Set the font size
 f.title.text_font_size="25px"
-# Title alingment
+# Title alignment
 f.title.align="center"
 
 
 
-#Style the axes
+# Style the axes
 
 # Set color for minor tick on x axis
 f.xaxis.minor_tick_line_color="blue"
@@ -90,7 +83,7 @@ f.axis.major_label_text_color="orange"
 
 
 
-#Axes geometry
+# Axes geometry
 
 # Set range for x axis
 f.x_range = Range1d(start=0, end=10)
@@ -109,12 +102,12 @@ f.yaxis[0].ticker.num_minor_ticks = 10
 
 
 
-#Style the grid
+# Style the grid
 
 # Sets grid line color for vertical lines
 # "None" removes the vertical line
 f.xgrid.grid_line_color = None
-# Set grid line transparancy for horizontal line
+# Set grid line transparency for horizontal line
 f.ygrid.grid_line_alpha = 0.6
 # Set grid line to be dashed line 5 by 3 pixels empty box
 f.grid.grid_line_dash = [5,3]
@@ -162,13 +155,13 @@ f.circle(x=flowers["petal_length"][flowers["species"]=="virginica"],
 
 
 
-#Style the legend
+# Style the legend
 
 # Set the legend location on the graph
-#f.legend.location = (575,555) # pixel coordinates
+# f.legend.location = (575,555) # pixel coordinates
 # Same as above
 f.legend.location = 'top_left'
-# Background transparancy of legend
+# Background transparency of legend
 f.legend.background_fill_alpha = 0
 # Legend border line color
 f.legend.border_line_color = None

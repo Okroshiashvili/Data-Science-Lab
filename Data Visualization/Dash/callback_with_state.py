@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Feb 23 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -33,7 +27,7 @@ app.layout = html.Div([
                   style = {'fontSize':24}),
         html.Button(id='submit-button',
                     n_clicks = 0,
-                    children = 'Subit Here',
+                    children = 'Submit Here',
                     style = {'fontSize':24}),        
         html.H1(id = 'number-out')
         ])
@@ -55,5 +49,6 @@ def output(n_clicks, number):
 
 if __name__ == '__main__':
     app.run_server()
+
 
 

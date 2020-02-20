@@ -1,8 +1,4 @@
-"""
-Created on Sat Feb 16 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 import plotly.offline as pyo
@@ -24,6 +20,5 @@ data = [go.Box(y = y,
 
 # Plot the data
 pyo.plot(data, filename = 'box_plot.html')
-
 
 

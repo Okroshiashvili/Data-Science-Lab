@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Feb 21 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -12,13 +5,11 @@ Created on Thu Feb 21 2019
 
 Input parameters are passed to the callback decorator as a list. For this
 reason we can include multiple inputs in our dashboard to affect the same
-output through the callback functio. 
+output through the callback function. 
 
 In this example I put two input components - both dropdowns
 
 """
-
-
 
 
 
@@ -95,5 +86,4 @@ def update_graph(xaxis_name, yaxis_name):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-
 

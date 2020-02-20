@@ -1,8 +1,3 @@
-"""
-Created on Mon Jun 24 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 

@@ -1,13 +1,9 @@
-# -*- coding: utf-8 -*-
+
+
+
 """
-Created on Sun Feb 17 2019
-
-@author: Nodar Okroshiashvili
+Import and insert Plotly plot into Dash dashboard
 """
-
-
-# Import and insert Plotly plot into Dash dashboard
-
 
 
 import dash
@@ -75,5 +71,4 @@ app.layout = html.Div(children = [dcc.Graph(id = 'scatterplot1',
 # Run the application
 if __name__ == '__main__':
     app.run_server()
-
 

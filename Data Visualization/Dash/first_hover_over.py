@@ -1,19 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 24 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
 """
-
 Hovering over the data point on the graph affect another part of figure
-
-
 """
-
 
 
 import dash

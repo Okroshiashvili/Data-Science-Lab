@@ -1,8 +1,3 @@
-"""
-Created on Tue Jun 18 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -17,9 +12,19 @@ class Node:
 class Trie:
     
     def __init__(self):
-        self.root = Node('*') # Makes root node empty
+        """
+        Initialize Trie with an empty root
+        """
+        self.root = Node('*')
+
+
+    def insert(self, word: str):
+        """
+        Takes string and inserts in the Trie
         
-    def insert(self, word):
+        Args:
+            word (str): word to insert
+        """
         current = self.root
         for char in word:
             if char in current.children:
@@ -32,7 +37,17 @@ class Trie:
                 current.counter += 1
             current.word_finished = True
     
-    def search(self, word):
+
+    def search(self, word: str) -> bool:
+        """
+        Takes string and searches it in the Trie
+        
+        Args:
+            word to look for
+        
+        Returns:
+            True or False, depending on search result
+        """
         if not self.root.children:
             return False
         current = self.root
@@ -46,6 +61,7 @@ class Trie:
         return False
 
 
+
 # Test the algorithm
 tree = Trie()
 
@@ -53,8 +69,7 @@ tree.insert('bat')
 tree.insert('hack')
 tree.insert('hac')
 
-print(tree.search('bat'))
-print(tree.search('has'))
+print(tree.search('bat')) # returns True
+print(tree.search('has')) # return False
 
 
-            

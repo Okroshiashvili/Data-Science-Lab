@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 26 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -34,7 +27,7 @@ app = dash.Dash()
 app.layout = html.Div([
         html.H1(id = 'live-update-text'),
         dcc.Interval(id = 'interval-component',
-                     interval = 2000, # 2000 millisecont equal to 2 second
+                     interval = 2000, # 2000 millisecond equal to 2 second
                      n_intervals = 0)])
 
 
@@ -51,5 +44,6 @@ def update_leyout(n):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
+
 
 

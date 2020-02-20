@@ -1,27 +1,17 @@
-"""
-Created on Tue Jun 18 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
 """
-
 Hashtable is data structure that implements associative array abstract
 data type.
 
-
 Here, I implement simple Hashtable with linear probing to solve collision
 problem.
-
 
 Collision in hashtable is when hash function produces two identical keys
 for two different values
 
 """
-
 
 
 class HashTable:
@@ -32,10 +22,14 @@ class HashTable:
         self.values = [None] * self.size
         
     
-    def put(self, key, data):
-        # Inset method.
-        # Inserts given data or values with given key
+    def put(self, key: str, data: int):
+        """
+        Inserts new data given key
         
+        Args:
+            key: Key for the new data
+            data: New value to insert
+        """
         index = self.hashfunction(key)
         
         # Not None implies there is a collision
@@ -52,9 +46,16 @@ class HashTable:
         self.values[index] = data
         
     
-    def get(self, key):
-        # Get the value with given key
+    def get(self, key: str):
+        """
+        Performs search in hashtable
         
+        Args:
+            key: Value used for search
+        
+        Returns:
+            None if not found or value
+        """        
         index = self.hashfunction(key)
         
         while self.keys[index] is not None:
@@ -67,9 +68,14 @@ class HashTable:
         return None
     
     
-    def hashfunction(self, key):
-        # Returns hash value for given key
+    def hashfunction(self, key: str) -> int:
+        """
+        Returns hash of a given key
         
+        Args:
+            key: Key value to hash
+
+        """      
         sum = 0
         for pos in range(len(key)):
             sum = sum + ord(key[pos])
@@ -92,8 +98,6 @@ print(table.get('table'))
 
 print(table.get('cherry'))
 
-
-
-
+print(table.hashfunction("orange"))
 
 

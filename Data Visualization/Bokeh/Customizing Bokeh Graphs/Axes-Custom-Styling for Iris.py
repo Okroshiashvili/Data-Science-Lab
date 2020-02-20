@@ -1,17 +1,12 @@
+
+
+
 """
-Created on Sun Feb  3 2019
+Plotting flower species
 
-@author: Nodar Okroshiashvili
+Modifies axis of a graph
 """
 
-
-#Plotting flower species
-
-
-# Modifies axis of a graph
-
-
-#Importing libraries
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
 from bokeh.sampledata.iris import flowers
@@ -47,6 +42,5 @@ f.axis.major_label_text_color="orange"
 
 #Save and show the figure
 show(f)
-
 
 

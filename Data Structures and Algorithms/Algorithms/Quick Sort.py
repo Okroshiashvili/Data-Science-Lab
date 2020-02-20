@@ -1,10 +1,3 @@
-"""
-Created on Mon Jun 24 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -45,5 +38,7 @@ if __name__ == "__main__":
    nums = [-2,-1,0,1,0,-1,-2]
    quick_sort(nums,0,len(nums)-1)
    print(nums)
+
+
 
 

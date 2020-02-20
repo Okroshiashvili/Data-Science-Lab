@@ -1,14 +1,8 @@
-"""
-Created on Sun Mar 11 2018
-
-@author:  Nodar Okroshiashvili 
-"""
-
 
 
 
 """
-Thompson Samplin Algorithm
+Thompson Sampling Algorithm
 
 """
 
@@ -24,7 +18,7 @@ dataset = pd.read_csv('data/Ads_CTR_Optimisation.csv')
 
 """
 
-First, let implement Random Selection as a basis and then implement
+First, let implement Random Selection as a baseline and then implement
 Thompson Sampling to compare with.
 
 """
@@ -78,7 +72,7 @@ for n in range(0, N):
             max_random = random_beta
             ad = i
     ads_selected.append(ad)
-    reward = dataset.values[n, ad] # ad here corresponds index at whcih ad was selected
+    reward = dataset.values[n, ad] # add here corresponds index at which ad was selected
     if reward == 1:
        numbers_of_rewards_1[ad] = numbers_of_rewards_1[ad] + 1
     else:
@@ -101,4 +95,5 @@ We see that, while using Random Selection, the reward is about 1200.
 Using Thompson Sampling gives us reward around 2500, such an improvement.
 
 """
+
 

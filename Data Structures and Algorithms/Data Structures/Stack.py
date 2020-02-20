@@ -1,8 +1,3 @@
-"""
-Created on Mon May  6 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -13,7 +8,7 @@ top of each other in a form of a stack
 
 
 
-First element in the stack is placed ath the bottom of the stack, second
+First element in the stack is placed at the bottom of the stack, second
 element is placed on top of first element and this procedure continues for
 other elements.
 
@@ -29,29 +24,40 @@ we use function called "pop".
 
 
 
-
-
-# Let implement stack
-
-
 class Stack:
     
     def __init__(self):
-        self.stack = list() # This is an empty stack
+        """
+        Initialize empty stack
+        """
+        self.stack = list()
+    
+
+    def push(self, value: int):
+        """
+        Insert value into a stack
         
-    # we use function called "push" to inser elements in stack
-    def push(self, value): # value parameter is the value we want to insert
-        self.stack.append(value) # append means to add value at the end of a list
-        
-    # To delete element we use function pop
+        Args:
+            value: value to insert at the end
+        """
+        self.stack.append(value)
+
+
     def pop(self):
+        """
+        Remove element from the stack
+
+        """
         if len(self.stack) < 1:
             print('The stack is empty')
         else:
             self.stack.pop()
-        
-    # Stack traversal, or printing stack elements
+    
+    
     def traverse(self):
+        """
+        Print stack element
+        """
         print(self.stack)
 
 
@@ -79,9 +85,10 @@ stack.traverse()
 
 
 
-# Resources
-https://dbader.org/blog/stacks-in-python
-https://interactivepython.org/runestone/static/pythonds/BasicDS/ImplementingaStackinPython.html
+# # Resources
+# https://dbader.org/blog/stacks-in-python
+
+# https://interactivepython.org/runestone/static/pythonds/BasicDS/ImplementingaStackinPython.html
 
 
 

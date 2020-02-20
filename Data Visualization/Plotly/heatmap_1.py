@@ -1,8 +1,3 @@
-"""
-Created on Sat Feb 16 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -22,7 +17,6 @@ data = [go.Heatmap(x = df['DAY'],
                    )]
 
 
-
 # Create layout
 layout = go.Layout(title = 'Hourly Temperature in Snata Barbara, CA')
 
@@ -32,6 +26,4 @@ fig = go.Figure(data = data, layout = layout)
 
 # Plot figure
 pyo.plot(fig, filename='heatmap_1.html')
-
-
 
