@@ -1,8 +1,5 @@
-"""
-Created on Sun Mar 31 2019
 
-@author: Nodar Okroshiashvili
-"""
+
 
 from bs4 import BeautifulSoup
 import requests
@@ -28,4 +25,5 @@ for tag in tags:
 
 # tag_list stores all the extracted links from website source
     
-  
+
+

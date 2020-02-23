@@ -1,8 +1,4 @@
-"""
-Created on Wed Apr  3 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from bs4 import BeautifulSoup
@@ -40,5 +36,4 @@ print(first_a)
 
 a_tags = soup.find_all('a',limit=2)
 print(a_tags)
-
 

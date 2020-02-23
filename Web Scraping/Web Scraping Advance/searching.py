@@ -1,9 +1,3 @@
-"""
-Created on Wed Apr  3 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -32,7 +26,7 @@ print(soup.find_all('a'))
 # regular expression
 
 # We can find tag names with regular expressions
-# For exmaple find tag names which start with b
+# For example find tag names which start with b
 
 regex = re.compile('^b')
 
@@ -70,10 +64,6 @@ def has_class(tag):
 
 for tag in soup.find_all(has_class):
     print(tag.name)
-
-
-
-
 
 
 

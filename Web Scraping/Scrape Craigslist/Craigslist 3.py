@@ -1,10 +1,3 @@
-"""
-Created on Fri Mar 15 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -86,10 +79,6 @@ npo_jobs_df.head()
 
 # Save as csv file
 npo_jobs_df.to_csv('npo_jobs.csv')
-
-
-
-
 
 
 

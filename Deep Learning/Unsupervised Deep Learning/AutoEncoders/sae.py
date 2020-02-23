@@ -1,16 +1,9 @@
-"""
-Created on Sat Jan 26 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
-# AutoEncoders
 
 
 
+# Stacked AutoEncoders
 
-# Importing the libraries
+
 import numpy as np
 import pandas as pd
 import torch
@@ -67,7 +60,8 @@ Till this point everything are the same as in Boltzman Machine case.
 # Class for Stacked AutoEncoders
 
 
-class SAE(nn.Module): # In parenthesis there is parent class from pytorch
+class SAE(nn.Module): # In parenthesis there is parent class from Pytorch
+    
     def __init__(self, ): # this helps to initialize parameters when create SAE class object
         super(SAE, self).__init__() # "super" allow us to use functions
         # and methods from torch "Module"
@@ -76,6 +70,8 @@ class SAE(nn.Module): # In parenthesis there is parent class from pytorch
         self.fc3 = nn.Linear(10, 20) # third full connection
         self.fc4 = nn.Linear(20, nb_movies) # output layer
         self.activation = nn.Sigmoid() # activation function
+    
+    
     def forward(self, x): # Function for forward propagation
         # x is our input vector or movie ratings
         x = self.activation(self.fc1(x)) # First encoding
@@ -155,5 +151,4 @@ for id_user in range(nb_users):
 print('test loss: '+str(test_loss/s))
 
 # Test loss equal to 0.95607
-
 

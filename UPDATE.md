@@ -58,4 +58,17 @@
 
 * Natural Language Processing
   * Update and refactor code
+
+22-Feb-2020
+
+* Web Scraping
+  * Update and refactor the codes
+
+* Housekeeping
+  * Update TO-Do file
+  * Update project's main README file
+  * Update requirements file
+
+* Deep Learning
+  * Refactor Supervised and Unsupervised learning parts
   

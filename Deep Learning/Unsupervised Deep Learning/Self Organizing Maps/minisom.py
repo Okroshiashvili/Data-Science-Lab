@@ -8,6 +8,9 @@ from warnings import warn
 
 """
     Minimalistic implementation of the Self Organizing Maps (SOM).
+
+Disclaimer: This implementation is not mine!
+
 """
 
 
@@ -20,6 +23,7 @@ def fast_norm(x):
 
 
 class MiniSom(object):
+
     def __init__(self, x, y, input_len, sigma=1.0, learning_rate=0.5, decay_function=None, random_seed=None):
         """
             Initializes a Self Organizing Maps.
@@ -54,6 +58,7 @@ class MiniSom(object):
         self.neigy = arange(y) # used to evaluate the neighborhood function
         self.neighborhood = self.gaussian
 
+
     def _activate(self, x):
         """ Updates matrix activation_map, in this matrix the element i,j is the response of the neuron i,j to x """
         s = subtract(x, self.weights) # x - w
@@ -62,10 +67,12 @@ class MiniSom(object):
             self.activation_map[it.multi_index] = fast_norm(s[it.multi_index])  # || x - w ||
             it.iternext()
 
+
     def activate(self, x):
         """ Returns the activation map to x """
         self._activate(x)
         return self.activation_map
+
 
     def gaussian(self, c, sigma):
         """ Returns a Gaussian centered in c """
@@ -74,6 +81,7 @@ class MiniSom(object):
         ay = exp(-power(self.neigy-c[1], 2)/d)
         return outer(ax, ay)  # the external product gives a matrix
 
+
     def diff_gaussian(self, c, sigma):
         """ Mexican hat centered in c (unused) """
         xx, yy = meshgrid(self.neigx, self.neigy)
@@ -81,10 +89,12 @@ class MiniSom(object):
         d = 2*pi*sigma*sigma
         return exp(-p/d)*(1-2/d*p)
 
+
     def winner(self, x):
         """ Computes the coordinates of the winning neuron for the sample x """
         self._activate(x)
         return unravel_index(self.activation_map.argmin(), self.activation_map.shape)
+
 
     def update(self, x, win, t):
         """
@@ -104,12 +114,14 @@ class MiniSom(object):
             self.weights[it.multi_index] = self.weights[it.multi_index] / fast_norm(self.weights[it.multi_index])
             it.iternext()
 
+
     def quantization(self, data):
         """ Assigns a code book (weights vector of the winning neuron) to each sample in data. """
         q = zeros(data.shape)
         for i, x in enumerate(data):
             q[i] = self.weights[self.winner(x)]
         return q
+
 
     def random_weights_init(self, data):
         """ Initializes the weights of the SOM picking random samples from data """
@@ -119,12 +131,14 @@ class MiniSom(object):
             self.weights[it.multi_index] = self.weights[it.multi_index]/fast_norm(self.weights[it.multi_index])
             it.iternext()
 
+
     def train_random(self, data, num_iteration):
         """ Trains the SOM picking samples at random from data """
         self._init_T(num_iteration)
         for iteration in range(num_iteration):
             rand_i = self.random_generator.randint(len(data)) # pick a random sample
             self.update(data[rand_i], self.winner(data[rand_i]), iteration)
+
 
     def train_batch(self, data, num_iteration):
         """ Trains using all the vectors in data sequentially """
@@ -135,13 +149,15 @@ class MiniSom(object):
             self.update(data[idx], self.winner(data[idx]), iteration)
             iteration += 1
 
+
     def _init_T(self, num_iteration):
         """ Initializes the parameter T needed to adjust the learning rate """
         self.T = num_iteration/2  # keeps the learning rate nearly constant for the last half of the iterations
 
+
     def distance_map(self):
         """ Returns the distance map of the weights.
-            Each cell is the normalised sum of the distances between a neuron and its neighbours.
+            Each cell is the normalized sum of the distances between a neuron and its neighbors.
         """
         um = zeros((self.weights.shape[0], self.weights.shape[1]))
         it = nditer(um, flags=['multi_index'])
@@ -154,6 +170,7 @@ class MiniSom(object):
         um = um/um.max()
         return um
 
+    
     def activation_response(self, data):
         """
             Returns a matrix where the element i,j is the number of times
@@ -163,6 +180,7 @@ class MiniSom(object):
         for x in data:
             a[self.winner(x)] += 1
         return a
+
 
     def quantization_error(self, data):
         """
@@ -174,6 +192,7 @@ class MiniSom(object):
             error += fast_norm(x-self.weights[self.winner(x)])
         return error/len(data)
 
+
     def win_map(self, data):
         """
             Returns a dictionary wm where wm[(i,j)] is a list with all the patterns
@@ -183,6 +202,7 @@ class MiniSom(object):
         for x in data:
             winmap[self.winner(x)].append(x)
         return winmap
+
 
 ### unit tests
 from numpy.testing import assert_almost_equal, assert_array_almost_equal, assert_array_equal
@@ -261,6 +281,7 @@ class TestMinisom:
         som.random_weights_init(array([[1.0, .0]]))
         for w in som.weights:
             assert_array_equal(w[0], array([1.0, .0]))
+
 
 
 

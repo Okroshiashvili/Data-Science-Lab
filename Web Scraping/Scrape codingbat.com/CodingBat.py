@@ -1,24 +1,13 @@
-"""
-Created on Sat Apr  6 2019
 
-@author: Nodar Okroshiashvili
-"""
-
-###############################################################################
 
 
 """
 
 We ar going to scrape codingbat.com
 
-
-
-Particularlly we have to scrape questions with examples in Java part
+Particularly we have to scrape questions with examples in Java part
 
 """
-
-
-
 
 
 import requests
@@ -49,7 +38,7 @@ for div in all_divs:
 
 # For loop in list comprehension to extract all links
 all_links = [base_url + div.a['href'] for div in all_divs]
-# These links are neccessary to open each section ad extract question with example
+# These links are necessary to open each section ad extract question with example
 
 
 for link in all_links:
@@ -85,5 +74,6 @@ for link in all_links:
             print(example)
 
         print('\n\n\n')
+
 
 

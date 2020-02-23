@@ -1,8 +1,4 @@
-"""
-Created on Sun Mar 31 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 import requests
@@ -53,7 +49,6 @@ soup = BeautifulSoup(google_page.content,'lxml')
 
 # Print prettified html source file for google.com
 print(soup.prettify())
-
 
 
 

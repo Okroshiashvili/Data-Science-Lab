@@ -1,8 +1,4 @@
-"""
-Created on Sat Apr  6 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from selenium import webdriver
@@ -21,7 +17,7 @@ http://chromedriver.chromium.org/downloads
 
 
 In linux (my OS) I extracted downloaded zip file and placed
-exe file in "/home/nodo/bin"
+exe file in "/home/UserName/bin"
 
 
 I did this in order not to write chrome driver path everytime
@@ -32,7 +28,7 @@ I did this in order not to write chrome driver path everytime
 # IF you did not locate exe file in user/bin or user/local/bin
 # then you have to specify the driver path while creating driver object
 # driver object is browser which you can programatically control
-driver = webdriver.Chrome('/Users/waqarjoyia/Downloads/chromedriver')
+driver = webdriver.Chrome('/Users/UserName/Downloads/chromedriver')
 
 
 
@@ -51,6 +47,8 @@ print(soup.prettify())
 
 # close webdriver object
 driver.close()
+
+
 
 
 

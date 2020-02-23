@@ -1,8 +1,4 @@
-"""
-Created on Sun Mar 31 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from bs4 import BeautifulSoup
@@ -34,7 +30,7 @@ print(p.parent.name)
 
 # html
 
-# who is the parent of the spurce html file?
+# who is the parent of the source html file?
 html = soup.html
 
 print(type(html.parent))
@@ -65,5 +61,4 @@ link = soup.a
 
 for parent in link.parents:
     print(parent.name)
-
 

@@ -1,8 +1,3 @@
-"""
-Created on Sun Mar 31 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -34,7 +29,7 @@ print(title.string)
 
 
 
-# .replace_with("") function            -- navigable string
+# .replace_with("") function
 
 print(title)
 

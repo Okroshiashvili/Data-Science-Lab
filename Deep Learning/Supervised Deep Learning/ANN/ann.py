@@ -1,15 +1,20 @@
-"""
-Created on Tue Mar 20 2018
 
-@author: Nodar Okroshiashvili
-"""
+
 
 # Part 1 - Data Preprocessing
 
-# Importing the libraries
-import numpy as np
+import keras
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+from keras.layers import Dense, Dropout
+from keras.models import Sequential
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.compose import ColumnTransformer
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import (GridSearchCV, cross_val_score,
+                                     train_test_split)
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 
 # Importing the dataset
 dataset = pd.read_csv('data/Churn_Modelling.csv')
@@ -30,9 +35,6 @@ It'll spot variable with higher weight.
 # Encoding categorical data
 
 
-
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-
 # We have two categorical variables, so we need two encoders
 
 # Categorical variable for country
@@ -43,9 +45,9 @@ X[:, 1] = labelencoder_X_1.fit_transform(X[:, 1])
 labelencoder_X_2 = LabelEncoder()
 X[:, 2] = labelencoder_X_2.fit_transform(X[:, 2])
 
-# Since country is not ordinal variable we need to create three dummy variabes
-onehotencoder = OneHotEncoder(categorical_features = [1])
-X = onehotencoder.fit_transform(X).toarray()
+# Since country is not ordinal variable we need to create three dummy variables
+ct = ColumnTransformer([("Geography", OneHotEncoder(), [1])], remainder = 'passthrough')
+X = ct.fit_transform(X)
 
 # We need remove one dummy variable to avoid dummy variable trap
 X = X[:, 1:]
@@ -53,12 +55,11 @@ X = X[:, 1:]
 
 
 # Splitting the dataset into the Training set and Test set
-from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
 
 # Feature Scaling
-from sklearn.preprocessing import StandardScaler
+
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
@@ -69,26 +70,20 @@ X_test = sc.transform(X_test)
 
 
 
-# Importing the Keras libraries and packages
-
-import keras
 # The sequential module that is required to initialize our neural network
 # The dense module that is required to build the layers of our neural network
 # The dropout module that is required for regularization of the network
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import Dropout
 
-# Initialising the ANN, defining it as a sequence of layers
+
+# Initializing the ANN, defining it as a sequence of layers
 classifier = Sequential()
 
 # Adding the input layer and the first hidden layer
 # argument "units" is the number of neurons in first hidden layer
 
-
 # To soleve overfitting problem we now use Dropout Regularization
-# Droupout can be randomly applied to layers to disable them to learn too much
-# We add Droup out to input layer and first hidden layer
+# Droupout can randomly applied to layers to disable them to learn too much
+# We add droupout to input layer and first hidden layer
 # It's generally advised to apply these two layers
 
 
@@ -125,7 +120,7 @@ We want to have probabilities of each customer leaves the bank, so we choose sig
 
 
 # Compiling the ANN
-# Untill this step weights in layers are still initialized and not optimized
+# Until this step weights in layers are still initialized and not optimized
 # optimizer argument do this job
 # We use stochastic gradient descent algorithm named "adam"
 classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
@@ -146,14 +141,14 @@ y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
 
 # Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
+
 cm = confusion_matrix(y_test, y_pred)
 
 
 
 # Make some new prediction
 
-"""Predict if the customer with the following informations will leave the bank:
+"""Predict if the customer with the following information will leave the bank:
 Geography: France
 Credit Score: 600
 Gender: Male
@@ -168,7 +163,6 @@ new_prediction = classifier.predict(sc.transform(np.array([[0.0, 0, 600, 1, 40, 
 new_prediction = (new_prediction > 0.5)
 
 # Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
 
@@ -183,13 +177,8 @@ cm = confusion_matrix(y_test, y_pred)
 
 
 # Include K-Fold Cross Validation into Keras
-# We use Keras wraper to do so
+# We use Keras wrapper to do so
 
-
-from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.model_selection import cross_val_score
-from keras.models import Sequential
-from keras.layers import Dense
 
 
 def build_classifier():
@@ -215,10 +204,6 @@ variance = accuracies.std()
 #        Tuning the ANN Hyper-parameters to achieve higher accuracy
 
 
-from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
 
 
 def build_classifier(optimizer):

@@ -1,8 +1,3 @@
-"""
-Created on Sun Mar 31 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -19,7 +14,7 @@ soup = BeautifulSoup(read_file(),'lxml')
 
 
 # Directly access p tag by its name
-# We know that this gives only first occurance of tag
+# We know that this gives only first occurrence of tag
 title = soup.title
 
 p = soup.p

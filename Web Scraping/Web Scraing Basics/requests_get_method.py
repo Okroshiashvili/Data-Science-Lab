@@ -1,10 +1,3 @@
-"""
-Created on Sun Mar 31 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -53,7 +46,4 @@ print(response.headers)
 
 for key,value in response.headers.items():
     print(key,'   ',value)
-
-
-
 

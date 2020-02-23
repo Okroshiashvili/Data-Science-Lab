@@ -1,8 +1,3 @@
-"""
-Created on Sat Jan 26 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -12,10 +7,15 @@ Created on Sat Jan 26 2019
 # Part 1 - Identify the Frauds with the Self-Organizing Map
 
 
-# Importing the libraries
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+from keras.layers import Dense
+from keras.models import Sequential
+from pylab import bone, colorbar, pcolor, plot, show
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+
+from minisom import MiniSom
 
 # Importing the dataset
 dataset = pd.read_csv('data/Credit_Card_Applications.csv')
@@ -29,20 +29,19 @@ y = dataset.iloc[:, -1].values
 
 
 # Feature Scaling
-from sklearn.preprocessing import MinMaxScaler
 sc = MinMaxScaler(feature_range = (0, 1))
 X = sc.fit_transform(X)
 
+
 # Training the SOM
-from minisom import MiniSom
 som = MiniSom(x = 10, y = 10, input_len = 15, sigma = 1.0, learning_rate = 0.5)
 # As we have little data we create grid 10 by 10
 # If we had more data we would make bigger grid to map data and 
-# identify outliers or faud correctly
+# identify outliers or fraud correctly
 # "input_len" argument corresponds the number of features in dataset
 # In original data set which is X, we keep customer ID in order to identify
-# fradulet transactions
-# "sigma" is the radius of different neighbourshoods in the grid
+# fraudulent transactions
+# "sigma" is the radius of different neighborhoods in the grid
 # "learning_rate" decides how much to weight our data during each iteration
 # Higher the learning rate the higher there will be convergence
 
@@ -57,7 +56,7 @@ som.train_random(data = X, num_iteration = 100)
 
 
 # Visualizing the results
-from pylab import bone, pcolor, colorbar, plot, show
+
 
 # Initialize window which will contin map
 bone()
@@ -81,7 +80,7 @@ colors = ['r', 'g']
 
 
 # Loop over all the customers and for each customer we will get the winning node
-# DEpendind on whether customer got approval or not we color that node
+# Depending on whether customer got approval or not we color that node
 # red if customer didn't get approval and green if got approval
 for i, x in enumerate(X):
     w = som.winner(x)
@@ -99,7 +98,7 @@ show()
 # Finding the frauds
 mappings = som.win_map(X)
 
-# Here I put the coordinates of faudlant transactions
+# Here I put the coordinates of fraudulent transactions
 # In my set up these coordinates are (5,2) but you may get different
 frauds = np.concatenate((mappings[(5,2)], mappings[(6,8)]), axis = 0)
 frauds = sc.inverse_transform(frauds)
@@ -120,7 +119,7 @@ customers = dataset.iloc[:, 1:].values
 # We create matrix of zeros and then populate this matrix with the
 # output of Self Organizing Map
 # which show potential fraud
-# We coded fraud as 1 and not fraut as 0
+# We coded fraud as 1 and not fraud as 0
 # So, from SOM output we have 67 potential frauds
 # and 690-67 non fraud transaction
 is_fraud = np.zeros(len(dataset))
@@ -130,7 +129,6 @@ for i in range(len(dataset)):
 
 
 # Feature Scaling
-from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 customers = sc.fit_transform(customers)
 
@@ -138,12 +136,8 @@ customers = sc.fit_transform(customers)
 
 # Part 3 - Now let's make the ANN!
 
-# Importing the Keras libraries and packages
-from keras.models import Sequential
-from keras.layers import Dense
 
-
-# Initialising the ANN
+# Initializing the ANN
 classifier = Sequential()
 
 # Adding the input layer and the first hidden layer
@@ -166,9 +160,5 @@ y_pred = np.concatenate((dataset.iloc[:, 0:1].values, y_pred), axis = 1)
 
 # Sort the probabilities
 y_pred = y_pred[y_pred[:, 1].argsort()]
-
-
-
-
 
 

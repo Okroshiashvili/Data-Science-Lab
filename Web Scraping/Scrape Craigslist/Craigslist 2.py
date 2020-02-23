@@ -1,9 +1,3 @@
-"""
-Created on Thu Mar 14 20:20:26 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -12,7 +6,7 @@ Created on Thu Mar 14 20:20:26 2019
                 
 
 
-for loop goes into each lfound link and scrapes each job description and prints
+for loop goes into each link and scrapes each job description and prints
 
 """
 
@@ -62,8 +56,4 @@ while True:
 
 
 print("Total Jobs:", job_no)
-
-
-
-
 

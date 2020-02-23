@@ -1,12 +1,8 @@
-"""
-Created on Sun Mar 25 2018
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
-# Convolutional Neural Network
+
+# Convolution Neural Network
 
 
 
@@ -14,26 +10,23 @@ Created on Sun Mar 25 2018
 # Part 1 - Building the CNN
 
 
-# Importing the Keras libraries and packages
+import numpy as np
+from keras.layers import Conv2D, Dense, Flatten, MaxPooling2D
 from keras.models import Sequential
-from keras.layers import Conv2D
-from keras.layers import MaxPooling2D
-from keras.layers import Flatten
-from keras.layers import Dense
-
-
+from keras.preprocessing import image
+from keras.preprocessing.image import ImageDataGenerator
 
 # Each package involves each step of building CNN
 
 
 
-# Initialising the Convolutional Neural Network
+# Initializing the Convolution Neural Network
 classifier = Sequential()
 
 
 # Step 1 - Perform Convolution and add Convolutional Layers
 
-# If Theano Backend "input_shape=(3,64,64)"
+
 # In tensorflow backend "input_shape=(64,64,3)"
 # In ANN activation function is used to activate neurons
 # In CNN activation function is used to make sure
@@ -63,7 +56,7 @@ classifier.add(Flatten())
 # Step 4 - Full connection - responsible for full connection through layers
 
 # Fully connected layer is hidden layer same as in ANN
-# Esentially this part is to construct ANN
+# Essentially this part is to construct ANN
 
 classifier.add(Dense(units = 128, activation = 'relu'))
 
@@ -86,7 +79,6 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 # Image preprocessing
 # Image augmentation process
 
-from keras.preprocessing.image import ImageDataGenerator
 
 
 train_datagen = ImageDataGenerator(rescale = 1./255,
@@ -114,13 +106,9 @@ test_set = test_datagen.flow_from_directory('data/test_set',
 # Apply CNN to the dataset
 classifier.fit_generator(training_set,
                          steps_per_epoch = (8000/32),
-                         epochs = 25,
+                         epochs = 20,
                          validation_data = test_set,
                          validation_steps = (2000/32))
-
-
-
-
 
 
 
@@ -131,10 +119,6 @@ classifier.fit_generator(training_set,
 
 
 # We put new pictures to predict either it is dog or cat
-
-
-import numpy as np
-from keras.preprocessing import image
 
 test_image = image.load_img('data/single_prediction/cat_or_dog_1.jpg', target_size = (64, 64))
 test_image = image.img_to_array(test_image)
@@ -151,10 +135,10 @@ else:
 """
 Data file for the CNN was too large to upload.
 You can download it from the following links:
+
 [ https://www.kaggle.com/c/dogs-vs-cats/data ]
+
 or
+
 [ https://www.microsoft.com/en-us/download/details.aspx?id=54765 ]
 """
-
-
-

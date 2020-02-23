@@ -1,8 +1,3 @@
-"""
-Created on Sat Apr  6 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -50,10 +45,5 @@ products = {div.div.a.span.string:div.div.a['href'] for div in soup.find_all('di
 
 for key,value in products.items():
     print(key , '   -->',value)
-
-
-
-
-
 
 

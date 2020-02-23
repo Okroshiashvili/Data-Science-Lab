@@ -1,14 +1,8 @@
-"""
-Created on Wed Mar 13 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
 from bs4 import BeautifulSoup
-import requests 
+import requests
 
 
 
@@ -19,10 +13,10 @@ url = "https://boston.craigslist.org/search/sof"
 # Create the response object to get the webpage
 response = requests.get(url)
 
-# Print the reponse object
+# Print the response object
 print(response)
 
-# If output is "Response 200" means we connected to the web page successfuly
+# If output is "Response 200" means we connected to the web page successfully
 
 
 
@@ -35,11 +29,8 @@ soup = BeautifulSoup(data, 'html.parser')
 
 
 
-# Find all "links" in soup object
-# or tags "a"
+# Find all "links" in soup object or tags "a"
 tags = soup.find_all('a')
-
-
 
 for tag in tags:
     print(tag.get('href'))
@@ -66,7 +57,7 @@ for address in addresses:
 
 """
 This is nearly perfect to start and know the mechanics of web scraping.
-However, extraction of data seperatly can cause mismatch.
+However, extraction of data separately can cause mismatch.
 We need to extract all job details at once
 
 """
@@ -105,10 +96,9 @@ for job in jobs:
 
 """
 
-The tags, classes and identifiers Iused here are not unique for each website.
+The tags, classes and identifiers I used here are not unique for each website.
 If you diced to scrape other website you should take a look at developer tool
 and identify proper tags to scrape
 
 """
-
 

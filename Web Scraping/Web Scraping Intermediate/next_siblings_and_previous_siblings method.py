@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Mar 31 19:15:43 2019
-
-@author: nodo
-"""
 
 
 
@@ -34,6 +27,8 @@ for sibling in p.next_siblings:
 
 for sibling in p.previous_siblings:
     print(sibling if sibling  != '\n' else '')
+
+
 
 
 

@@ -1,9 +1,9 @@
-"""
-Created on Sun Apr  7 2019
 
-@author: Nodar Okroshiashvili
-"""
 
+
+"""
+Extracts pictures and theirs captions from Instagram
+"""
 
 
 
@@ -18,6 +18,7 @@ import shutil
 
 
 class App:
+
     def __init__(self, username='YourUserName', password='YourPassword',
                  target_username='put_the_targets_user_name',
                  path='/home/UserName/Desktop/instaPhotos'): # Put path where to save photos
@@ -44,6 +45,7 @@ class App:
         sleep(3)
         self.driver.close()
 
+
     def write_captions_to_excel_file(self, images, caption_path):
         print('writing to excel')
         workbook = Workbook(os.path.join(caption_path, 'captions.xlsx'))
@@ -62,6 +64,7 @@ class App:
             worksheet.write(row, 1, caption)
             row += 1
         workbook.close()
+
 
     def download_captions(self, images):
         captions_folder_path = os.path.join(self.path, 'captions')
@@ -97,6 +100,7 @@ class App:
                 print(e)
                 print('Could not download image number ', index)
                 print('Image link -->', link)
+
 
     def scroll_down(self):
         try:
@@ -136,6 +140,7 @@ class App:
             self.error = True
             print('Could not find search bar')
 
+
     def close_dialog_box(self):
         # reload page
         sleep(2)
@@ -151,8 +156,8 @@ class App:
             sleep(1)
         except Exception:
             pass
-
-
+    
+    
     def close_settings_window_if_there(self):
         try:
             self.driver.switch_to.window(self.driver.window_handles[1])
@@ -160,6 +165,7 @@ class App:
             self.driver.switch_to.window(self.driver.window_handles[0])
         except Exception as e:
             pass
+    
 
     def log_in(self, ):
         try:
@@ -188,13 +194,6 @@ class App:
                 self.error = True
 
 
-
 if __name__ == '__main__':
     app = App()
-
-
-
-
-
-
 

@@ -1,18 +1,12 @@
-"""
-Created on Sat Jan 19 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
-
-# Bernuli Boltzmann Machines
+# Bernoulli Boltzmann Machines
 
 
 
 
-# We are going to implement Restricted Boltzman Machines from scratch
+# We are going to implement Restricted Boltzmann Machines from scratch
 
 # To optimize RBM we'll use "k-step contrastive divergence" algorithm
 
@@ -26,7 +20,7 @@ import torch.nn as nn # For Neural Networks
 import torch.nn.parallel # For parallel computation
 import torch.optim as optim # For optimization
 import torch.utils.data # For data loading and preprocessing
-from torch.autograd import Variable # For Stochastic Gradient Descet
+from torch.autograd import Variable # For Stochastic Gradient Descent
 
 
 
@@ -109,6 +103,7 @@ test_set[test_set >= 3] = 1
 
 # Creating the architecture of the Neural Network
 class RBM():
+
     def __init__(self, nv, nh): 
         """
         nv - # of visible nodes
@@ -120,6 +115,7 @@ class RBM():
         self.b = torch.randn(1, nv) # initialize bias for probabilities
                                     # of visible nodes given hidden nodes
     
+
     def sample_h(self, x):
         """
         samples the probabilities of the hidden nodes
@@ -135,7 +131,7 @@ class RBM():
         return p_h_given_v, torch.bernoulli(p_h_given_v) 
         # returns probabilities and Gibbs sampling of hidden neurons
         # according to the probabilities
-        # as we have binary outcome we use bernuli distribution
+        # as we have binary outcome we use bernoulli distribution
     
     
     def sample_v(self, y):
@@ -157,7 +153,7 @@ class RBM():
         so we approximate it by contrastive divergence and
         this comes with Gibbs sampling
         
-        Vector v0 contains the raitings of all the
+        Vector v0 contains the ratings of all the
         movies by one user
         
         vk is the visible node obtained after k samplings
@@ -191,7 +187,7 @@ nb_epoch = 10  # number of epochs
 for epoch in range(1, nb_epoch + 1):
     train_loss = 0
     """
-    we need to normilize the loss function so 
+    we need to normalize the loss function so 
     we need counter which is s
     """
     s = 0.
@@ -210,7 +206,7 @@ for epoch in range(1, nb_epoch + 1):
         for k in range(10): # for loop for k-steps of contrastive divergence
             _,hk = rbm.sample_h(vk)
             _,vk = rbm.sample_v(hk)
-            vk[v0<0] = v0[v0<0] # freee cells that there are -1
+            vk[v0<0] = v0[v0<0] # free cells that there are -1
             # They won't be updated during Gibb'sampling
         phk,_ = rbm.sample_h(vk)
         rbm.train(v0, vk, ph0, phk) # Apply train function
@@ -235,5 +231,4 @@ for id_user in range(nb_users):
 print('test loss: '+str(test_loss/s))
 # Test loss is 0.2407
 # Model does not over or under fit
-
 

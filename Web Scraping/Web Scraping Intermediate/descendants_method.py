@@ -1,8 +1,3 @@
-"""
-Created on Sun Mar 31 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -33,13 +28,12 @@ print(len(children))
 
 
 # Each tag has descendants method
-# children and descendants  method are pritty much the same methods
+# children and descendants  method are pretty much the same methods
 
 # .descendants method returns us ALL the children of the given tag
 for index,child in enumerate(soup.head.descendants):
     print(index)
     print(child if child != '\n' else '\\n')
-
 
 
 

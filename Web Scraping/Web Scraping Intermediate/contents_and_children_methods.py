@@ -1,8 +1,4 @@
-"""
-Created on Sun Mar 31 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from bs4 import BeautifulSoup
@@ -48,7 +44,6 @@ body.children method gives all the information what is included inside
 the children tags of body tag
 
 """
-
 
 
 

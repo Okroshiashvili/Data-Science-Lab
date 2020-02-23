@@ -1,8 +1,4 @@
-"""
-Created on Thu Apr  4 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from bs4 import BeautifulSoup
@@ -25,5 +21,4 @@ soup = BeautifulSoup(read_file(),'lxml')
 
 tag = soup.find('a')
 print(tag)
-
 

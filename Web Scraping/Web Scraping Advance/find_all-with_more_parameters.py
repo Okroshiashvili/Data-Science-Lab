@@ -1,8 +1,4 @@
-"""
-Created on Wed Apr  3 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from bs4 import BeautifulSoup
@@ -42,13 +38,12 @@ for tag in tags:
 
 # recursive parameter
     
-# If True (default state of parameter) recoursively parse the whole tree
+# If True (default state of parameter) recursively parse the whole tree
 # If False it parse only direct children of given tag
 
 title = soup.find_all('title',recursive=False)
 
 print(title)
-
 
 
 

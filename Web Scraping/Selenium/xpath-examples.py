@@ -1,3 +1,6 @@
+
+
+
 from selenium import webdriver
 from time import sleep
 
@@ -22,7 +25,7 @@ sleep(5)
 driver.get('https://www.google.com')
 sleep(2)
 
-searchbar = driver.find_element_by_xpath("//input[@id='lst-ib']")       #
+searchbar = driver.find_element_by_xpath("//input[@id='lst-ib']")
 
 searchbar.send_keys('valid xpath expression')
 
@@ -31,3 +34,4 @@ searchbar.submit()
 sleep(5)
 
 driver.close()
+

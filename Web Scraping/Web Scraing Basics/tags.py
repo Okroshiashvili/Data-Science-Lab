@@ -1,8 +1,4 @@
-"""
-Created on Sun Mar 31 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from bs4 import BeautifulSoup
@@ -18,7 +14,7 @@ soup = BeautifulSoup(read_file(),'lxml')
 
 
 # Accessing meta tag
-# This gives only first occurance of meta tag
+# This gives only first occurrence of meta tag
 meta = soup.meta
 
 
@@ -57,6 +53,7 @@ body['style'] = 'some style'
 
 # Returns multivalued attributes
 print(body['class'])
+
 
 
 

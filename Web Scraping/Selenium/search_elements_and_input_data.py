@@ -1,8 +1,3 @@
-"""
-Created on Sat Apr  6 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
@@ -35,7 +30,5 @@ sleep(10)
 
 # We have to close driver object
 driver.close()
-
-
 
 

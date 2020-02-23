@@ -1,35 +1,31 @@
-"""
-Created on Sat Jan 26 2019
-
-@author: Nodar Okroshiashvili
-"""
 
 
 
-# Recurrent Neural Network
+# Recurrent Neural Networks
 
 
 
 # Part 1 - Data Preprocessing
 
 
+import math
 
-# Importing the libraries
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
-
-
+from keras.layers import LSTM, Dense, Dropout
+from keras.models import Sequential
+from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import MinMaxScaler
 
 # Importing the training set
 dataset_train = pd.read_csv('data/Google_Stock_Price_Train.csv')
 
-# Seperate training set
+# Separate training set
 training_set = dataset_train.iloc[:, 1:2].values
 
 
 # Feature Scaling to optimize the process
-from sklearn.preprocessing import MinMaxScaler
 
 sc = MinMaxScaler(feature_range = (0, 1))
 training_set_scaled = sc.fit_transform(training_set)
@@ -63,26 +59,18 @@ X_train = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
 # Part 2 - Building the RNN
 
 
-
-# Importing the Keras libraries and packages
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from keras.layers import Dropout
-
-
-
-# Initialising the RNN
+# Initializing the RNN
 regressor = Sequential()
 
 
 
-# Adding the first LSTM layer and some Dropout regularisation
+# Adding the first LSTM layer and some Dropout regularization
+
 regressor.add(LSTM(units = 50, return_sequences = True, input_shape = (X_train.shape[1], 1)))
 # "units" argument is the number of the LSTMs themselves
 # or the number of memory units you want to have in LSTM
 # Moreover, units=50 gives us high dimensionality
-# in order to catch the price trend more accuratly
+# in order to catch the price trend more accurately
 
 # "return_sequence" argument is set to True because we build stacked
 # LSTM and adding extra layers
@@ -95,15 +83,15 @@ regressor.add(Dropout(0.2))
 # This means that 10 neurons will be ignored at each iteration
 
 
-# Adding a second LSTM layer and some Dropout regularisation
+# Adding a second LSTM layer and some Dropout regularization
 regressor.add(LSTM(units = 50, return_sequences = True))
 regressor.add(Dropout(0.2))
 
-# Adding a third LSTM layer and some Dropout regularisation
+# Adding a third LSTM layer and some Dropout regularization
 regressor.add(LSTM(units = 50, return_sequences = True))
 regressor.add(Dropout(0.2))
 
-# Adding a fourth LSTM layer and some Dropout regularisation
+# Adding a fourth LSTM layer and some Dropout regularization
 regressor.add(LSTM(units = 50))
 regressor.add(Dropout(0.2))
 
@@ -121,7 +109,7 @@ regressor.fit(X_train, y_train, epochs = 100, batch_size = 32)
 
 
 
-# Part 3 - Making the predictions and visualising the results
+# Part 3 - Making the predictions and visualizing the results
 
 
 
@@ -135,7 +123,7 @@ real_stock_price = dataset_test.iloc[:, 1:2].values
 
 # Getting the predicted stock price of 2017
 # Conatenate training and test set
-# Concatination is necessary in order to get 60 previous inputs
+# Concatenation is necessary in order to get 60 previous inputs
 # for each day of January 2017 or our test data set
 # We have to concatenate original data frames not scaled ones
 dataset_total = pd.concat((dataset_train['Open'], dataset_test['Open']), axis = 0)
@@ -151,7 +139,7 @@ inputs = inputs.reshape(-1,1)
 inputs = sc.transform(inputs)
 
 # With this loop we'll get 60 previous inputs for each of the
-# stock prices of Jauary 2017 wich contains 20 days
+# stock prices of January 2017 which contains 20 days
 X_test = []
 for i in range(60, 80):
     X_test.append(inputs[i-60:i, 0])
@@ -172,9 +160,6 @@ predicted_stock_price = sc.inverse_transform(predicted_stock_price)
 
 # We need to calculate RMSE
 
-import math
-from sklearn.metrics import mean_squared_error
-
 # This RMSE is in absolute terms
 rmse = math.sqrt(mean_squared_error(real_stock_price, predicted_stock_price))
 
@@ -185,8 +170,7 @@ range_stock_price = real_stock_price.max() - real_stock_price.min()
 relative_rmse = rmse / range_stock_price
 
 
-
-# Visualising the results
+# Visualizing the results
 plt.plot(real_stock_price, color = 'red', label = 'Real Google Stock Price')
 plt.plot(predicted_stock_price, color = 'blue', label = 'Predicted Google Stock Price')
 plt.title('Google Stock Price Prediction')
@@ -195,8 +179,6 @@ plt.ylabel('Google Stock Price')
 plt.grid()
 plt.legend()
 plt.show()
-
-
 
 
 

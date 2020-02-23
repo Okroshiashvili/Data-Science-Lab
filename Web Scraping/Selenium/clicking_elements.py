@@ -1,9 +1,3 @@
-"""
-Created on Sat Apr  6 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -30,5 +24,6 @@ sleep(5)
 
 
 driver.close()
+
 
 

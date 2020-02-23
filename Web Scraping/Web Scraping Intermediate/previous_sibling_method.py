@@ -1,8 +1,4 @@
-"""
-Created on Sun Mar 31 2019
 
-@author: Nodar Okroshiashvili
-"""
 
 
 from bs4 import BeautifulSoup
@@ -26,4 +22,3 @@ print(soup.html.contents)
 # .previous_sibling method gives all the previous sibling tags of a given tag
 
 print(body.previous_sibling.previous_sibling)
-

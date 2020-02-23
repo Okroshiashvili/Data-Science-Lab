@@ -1,9 +1,3 @@
-"""
-Created on Sun Mar 31 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -35,5 +29,6 @@ print(body.contents)
 # Goes along each sibling tags and prints them
 
 print(p.next_sibling.next_sibling)
+
 
 
