@@ -1,9 +1,4 @@
-"""
-Created on Mon Feb  5 2018
 
-@author: Nodar Okroshiashvili
-
-"""
 
 
 """
@@ -13,17 +8,14 @@ K Nearest Neighbors
 
 
 
-
-# Pre-processing of data
-
-
-# Importing the libraries
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
-
-
-
+from matplotlib.colors import ListedColormap
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
 
 # Importing the dataset
 dataset = pd.read_csv('data/Social_Network_Ads.csv')
@@ -35,17 +27,11 @@ X = dataset.iloc[:, [2,3]].values
 y = dataset.iloc[:, 4].values
 
 
-
-from sklearn.model_selection import train_test_split
-
 # Splitting the dataset into the Training set and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
 
 
-
-
 # Feature Scaling
-from sklearn.preprocessing import StandardScaler
 
 # Define scaler object
 sc_X = StandardScaler()
@@ -57,7 +43,6 @@ X_test = sc_X.transform(X_test)
 
 
 # Fitting KNN to the Training set
-from sklearn.neighbors import KNeighborsClassifier
 
 # Define classifier object
 classifier = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p = 2)
@@ -73,18 +58,12 @@ y_pred = classifier.predict(X_test)
 
 
 # Make the Confusion Matrix
-
-from sklearn.metrics import confusion_matrix
-
-# Create confusion matrix
 cm = confusion_matrix(y_test, y_pred)
-
 
 
 
 # Visualizing the Training set results
 
-from matplotlib.colors import ListedColormap
 
 # Re-define variables
 X_set, y_set = X_train, y_train
@@ -110,7 +89,6 @@ plt.show()
 
 # Visualizing the Test set results
 
-from matplotlib.colors import ListedColormap
 
 # Re-define variables
 X_set, y_set = X_test, y_test
@@ -130,5 +108,7 @@ plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
+
+
 
 

@@ -1,13 +1,9 @@
-"""
-Created on Mon Jul  2 13:18:49 2018
-
-@author: Nodar.Okroshiashvili
-"""
 
 
-import pandas as pd
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import statsmodels.api as sm
 
 
@@ -221,4 +217,3 @@ To Do List:
 
 
 """
-

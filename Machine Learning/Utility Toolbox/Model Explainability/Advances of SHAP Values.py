@@ -1,10 +1,3 @@
-"""
-Created on Sun May 19 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -13,7 +6,7 @@ Here we investigate how aggregating many SHAP values can give more detailed
 alternatives to permutation importance and partial dependence plots.
 
 
-Shap values show how much a given feature changed our prediction
+ShAP values show how much a given feature changed our prediction
 (compared to if we made that prediction at some baseline value of that feature).
 
 
@@ -29,13 +22,13 @@ Data link:
 
 
 
-
-
-
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+import shap
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
+
 
 data = pd.read_csv('FIFA 2018 Statistics.csv')
 
@@ -53,9 +46,6 @@ my_model = RandomForestClassifier(random_state=0).fit(train_X, train_y)
 
 
 # We get the SHAP values for all validation data with the following code.
-
-
-import shap
 
 # Create object that can calculate shap values
 explainer = shap.TreeExplainer(my_model)
@@ -85,8 +75,6 @@ But PDP does not show what's the distribution of effect
 """
 
 
-
-
 shap_values = explainer.shap_values(X)
 
 
@@ -107,8 +95,5 @@ the higher the model's prediction is for winning the Man of the Match award.
 The spread suggests that other features must interact with Ball Possession %.
 
 """
-
-
-
 
 

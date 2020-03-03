@@ -1,9 +1,3 @@
-"""
-Created on Sat Feb 24 2018
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -13,13 +7,11 @@ K-Means
 """
 
 
-
-
-# Import the libraries
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
+from sklearn.cluster import KMeans
 
 # Import the dataset
 dataset = pd.read_csv('data/Mall_Customers.csv')
@@ -31,9 +23,6 @@ X = dataset.iloc[:, [3,4]].values
 
 
 # Using the Elbow Method to find the optimal number of clusters
-
-from sklearn.cluster import KMeans
-
 # We have to write for loop, to loop inside ten clusters and plot the result
 
 # create empty list
@@ -41,21 +30,19 @@ wcss = []
 
 for i in range(1, 11):
     kmeans = KMeans(n_clusters = i, init = 'k-means++', max_iter = 300, n_init = 10, random_state = 0)
-# we create k-means object we some parameters
-# n_cluster is the number of cluster or our iterator
-# init is to avoid random initialization trap
-# max_iter means maximum number of iterations to find final clusters
-# n_init is number of times the algorithm, will be run with different initial centroids
+    # we create k-means object we some parameters
+    # n_cluster is the number of cluster or our iterator
+    # init is to avoid random initialization trap
+    # max_iter means maximum number of iterations to find final clusters
+    # n_init is number of times the algorithm, will be run with different initial centroids
     kmeans.fit(X)
 # Fit the model to the dataset
     wcss.append(kmeans.inertia_)
 # computes wcss or inertia
 
 
-    
-    
 # Plot the result of loop
-
+# The plot show that 5 cluster will be optimal
 plt.plot(range(1, 11), wcss)
 plt.title('The Elbow Method')
 plt.xlabel('Number of Clusters')
@@ -64,7 +51,6 @@ plt.show()
 
 
 
-# We have optimal number of clusters
 # Now let apply k-means to the dataset
 
 
@@ -90,5 +76,4 @@ plt.xlabel('Annual Income (k$)')
 plt.ylabel('Spending score (1-100)')
 plt.legend()
 plt.show()
-
 

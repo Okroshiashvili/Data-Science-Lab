@@ -20,3 +20,8 @@ nltk==3.4.5
 fake-useragent==0.1.11
 selenium==3.141.0
 xlsxwriter==1.2.7
+xgboost==1.0.1
+xlrd==1.2.0
+shap==0.35.0
+eli5==0.10.1
+pdpbox==0.2.0

@@ -4,20 +4,17 @@ In this folder, there are various machine learning algorithms. Each code file co
 
 * Supervised Machine Learning
 
-    * Regression
-    * Classification
-    * Boosting
-
+  * Regression
+  * Classification
+  * Boosting
 
 * Unsupervised Machine Learning
 
-    * Association Rule Learning
-    * Dimensionality Reduction
-    * Clustering
-
+  * Association Rule Learning
+  * Dimensionality Reduction
+  * Clustering
 
 * Utility Toolbox
-    * Data Pre-Processing
-    * Model Selection
-    * Model Explainability
-
+  * Data Pre-Processing
+  * Model Selection
+  * Model Explainability

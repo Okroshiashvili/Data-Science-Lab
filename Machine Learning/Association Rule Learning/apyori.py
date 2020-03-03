@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-a simple implementation of Apriori algorithm by Python.
+A simple implementation of Apriori algorithm in Python.
 """
 
 import sys
@@ -439,3 +439,5 @@ def main(**kwargs):
 
 if __name__ == '__main__':
     main()
+
+

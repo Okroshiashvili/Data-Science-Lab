@@ -1,8 +1,5 @@
-"""
-Created on Wed May 23 13:34:04 2018
 
-@author: Nodar.Okroshiashvili
-"""
+
 
 # Import libraries
 import pandas as pd
@@ -10,10 +7,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import t as t_stat
 from scipy import stats
-# Load file
-df = pd.read_csv('data.csv')
 
-# Seperate X and Y values
+
+# Load file
+df = pd.read_csv('data/data.csv')
+
+# Separate X and Y values
 X = list(df['YearsExperience'].values)
 Y = list(df['Salary'].values)
 
@@ -168,7 +167,7 @@ def predict(X, Y, df):
     leverage = leverage.tolist()
     influence = influence.tolist()
     
-    # I use internaly studentized residuals as it gives very approximate result
+    # I use internally studentized residuals as it gives very approximate result
 	# instead of externally studentized residuals
     DFFITS = (studentized_residuals[2]) * (leverage[2] / (1 - leverage[2]))**0.5 
     
@@ -201,7 +200,7 @@ def predict(X, Y, df):
     
  
 
-predict(X,Y,df)    
+predict(X,Y,df)   
 
 
 
@@ -316,3 +315,5 @@ def qq_plot():
     plt.show()    
  
 qq_plot()
+
+

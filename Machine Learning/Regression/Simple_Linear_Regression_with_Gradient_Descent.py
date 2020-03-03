@@ -1,8 +1,4 @@
-"""
-Created on Thu Aug 30 13:48:52 2018
 
-@author: nokroshiashvili
-"""
 
 
 """
@@ -15,9 +11,9 @@ import pandas as pd
 
 
 # Open dataset
-df = pd.read_excel('data.xlsx')
+df = pd.read_csv('data/data.csv')
 
-# Conver Pandas DataFrame into List
+# Convert Pandas DataFrame into List
 df = df.values
 
 """

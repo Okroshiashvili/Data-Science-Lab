@@ -1,10 +1,3 @@
-"""
-Created on Sun Feb 25 2018
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -14,12 +7,12 @@ Hierarchical Clustering
 """
 
 
-
-
-# Import the libraries
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+import scipy.cluster.hierarchy as sch
+from sklearn.cluster import AgglomerativeClustering
 
 # Import the dataset
 dataset = pd.read_csv('data/Mall_Customers.csv')
@@ -32,8 +25,6 @@ X = dataset.iloc[:, [3,4]].values
 
 # Using the dendrogram to find optimal number of clusters
 
-import scipy.cluster.hierarchy as sch
-
 dendogram = sch.dendrogram(sch.linkage(X, method = 'ward'))
 # "ward" method tries to minimize variance within each cluster
 plt.title('Dendrogram')
@@ -45,7 +36,6 @@ plt.show()
 
 # Fitting HC to the dataset
 
-from sklearn.cluster import AgglomerativeClustering
 
 
 # Create clustering object
@@ -54,8 +44,6 @@ hc = AgglomerativeClustering(n_clusters = 5, affinity = 'euclidean', linkage = '
 
 # Make "prediction" which client belongs to which cluster
 y_hc = hc.fit_predict(X)
-
-
 
 
 # Visualize the clusters along with data points
@@ -70,5 +58,7 @@ plt.xlabel('Annual Income (k$)')
 plt.ylabel('Spending score (1-100)')
 plt.legend()
 plt.show()
+
+
 
 

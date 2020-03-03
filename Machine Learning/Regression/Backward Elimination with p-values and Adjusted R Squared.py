@@ -1,13 +1,10 @@
-"""
-Created on Tue Jun 26 11:57:48 2018
 
-@author: Nodar.Okroshiashvili
+
 
 """
+Backward Elimination with P-Values and Adjusted R Squared
 
-
-
-# Backward Elimination with P-Values and Adjusted R Squared
+"""
 
 
 import pandas as pd
@@ -16,11 +13,11 @@ import statsmodels.formula.api as sm
 
 
 
-df = pd.read_csv('wage1.csv')
+df = pd.read_csv('data/wage1.csv')
 
-X = df.iloc[:,[0,1,2,3,4,5,6]].as_matrix()
+X = df.iloc[:,[0,1,2,3,4,5,6]]
 
-y = df['wage'].as_matrix()
+y = df['wage']
 
 
 
@@ -63,9 +60,10 @@ def backwardElimination(x, SL):
 
 
 SL = 0.05  # Significance Level
-X_optimal = X[:, [0, 1, 2, 3, 4, 5,6]]  # Vector of independent variables
+X_optimal = X.iloc[:, [0, 1, 2, 3, 4, 5,6]]  # Vector of independent variables
 
 # Returns optimal independent variables but with changed order
 # Take care not to be mistaken by the column indexing as the result from
 # X_Modeled does not coincide original X
 X_Modeled = backwardElimination(X_optimal, SL)
+

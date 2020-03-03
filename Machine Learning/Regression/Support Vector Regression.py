@@ -1,8 +1,4 @@
-"""
-Created on Fri Apr 27 15:20:43 2018
 
-@author: Nodar.Okroshiashvili
-"""
 
 
 """
@@ -11,44 +7,43 @@ Created on Fri Apr 27 15:20:43 2018
 
 """
 
-# Importing the libraries
-import numpy as np
+
+
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVR
 
 # Importing the dataset
 dataset = pd.read_csv('data/Position_Salaries.csv')
 X = dataset.iloc[:, 1:2].values
 y = dataset.iloc[:, 2].values
 
-#%%
+
 
 # Feature Scaling
-
-from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 sc_y = StandardScaler()
 X = sc_X.fit_transform(X)
-y = sc_y.fit_transform(y)
+y = sc_y.fit_transform(y.reshape(-1,1))
 
-#%%
+
 
 # Fitting SVR to the dataset
 # As we have no linear problem we have to use non-linear kernel
 # Radial Bases Function (rbf)
-from sklearn.svm import SVR
+
 regressor = SVR(kernel = 'rbf')
 regressor.fit(X, y)
 
-#%%
 
 # Predicting a new result
 # Predicted values is in scaled format, so we need to "re-scale" to return it in original format
-y_pred = regressor.predict(6.5)
+y_pred = regressor.predict([[6.5]])
 # Rescales prediction 
 y_pred = sc_y.inverse_transform(y_pred)
 
-#%%
 
 # Visualizing the SVR results
 plt.scatter(X, y, color = 'red')
@@ -67,7 +62,6 @@ This is due to penalty parameter
 
 """
 
-#%%
 
 # Visualizing the SVR results (for higher resolution and smoother curve)
 X_grid = np.arange(min(X), max(X), 0.01) # choice of 0.01 instead of 0.1 step because the data is feature scaled
@@ -78,5 +72,8 @@ plt.title('Truth or Bluff (SVR)')
 plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
+
+
+
 
 

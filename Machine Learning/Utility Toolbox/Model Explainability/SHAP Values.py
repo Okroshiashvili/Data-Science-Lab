@@ -1,9 +1,3 @@
-"""
-Created on Sun May 19 2019
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -51,12 +45,11 @@ Data link:
 
 
 
-import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
+import pandas as pd
+import shap
 from sklearn.ensemble import RandomForestClassifier
-
-
+from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('FIFA 2018 Statistics.csv')
 
@@ -98,9 +91,6 @@ my_model.predict_proba(data_for_prediction_array)
 
 
 
-
-import shap
-
 # Create object that can calculate shap values
 explainer = shap.TreeExplainer(my_model)
 
@@ -125,9 +115,6 @@ shap.force_plot(explainer.expected_value[1], shap_values[1], data_for_prediction
 
 
 
-
-
-
 # Function to plot SHAP values
 
 sample_data_for_prediction = X_val.iloc[0].astype(float)
@@ -138,12 +125,5 @@ def plot_shap(model, prediction_data):
     shap_values = explainer.shap_values(prediction_data)
     shap.initjs()
     return shap.force_plot(explainer.expected_value[1], shap_values[1], prediction_data)
-
-
-
-
-
-
-
 
 

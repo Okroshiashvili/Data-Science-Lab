@@ -1,9 +1,3 @@
-"""
-Created on Sun Jan 27 2019
-
-@author: Nodar Okroshiashvili
-
-"""
 
 
 
@@ -19,7 +13,7 @@ P-Values, or we exclude variables based on their P-Values.
 
 import pandas as pd
 import numpy as np
-import statsmodels.formula.api as sm
+import statsmodels.api as sm
 
 
 # Open dataset and separate X and Y variable
@@ -65,5 +59,6 @@ X_optimal = X[:, [0, 1, 2, 3, 4, 5,6]]
 
 X_modeled = backwardElimination(X_optimal, SL)
 # Returns matrix of optimal independent variables
+
 
 

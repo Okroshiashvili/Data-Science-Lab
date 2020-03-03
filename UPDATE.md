@@ -71,4 +71,16 @@
 
 * Deep Learning
   * Refactor Supervised and Unsupervised learning parts
-  
+
+3-Mar-2020
+
+* Machine Learning
+  * Update, Refactor and Test all codes
+
+* Utility Toolbox
+  * Refactor codes
+
+* Housekeeping
+  * Update TO-DO
+  * Update Requirements
+  * Update README - Add Table of Content

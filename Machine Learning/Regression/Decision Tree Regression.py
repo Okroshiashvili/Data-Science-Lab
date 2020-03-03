@@ -1,11 +1,3 @@
-"""
-Created on Fri Apr 27 2018
-
-@author: Nodar Okroshiashvili
-"""
-
-
-
 
 
 
@@ -16,12 +8,10 @@ Created on Fri Apr 27 2018
 
 
 
-
-
-# Importing the libraries
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+from sklearn.tree import DecisionTreeRegressor
 
 # Importing the dataset
 dataset = pd.read_csv('data/Position_Salaries.csv')
@@ -34,7 +24,6 @@ y = dataset.iloc[:, 2].values
 
 
 # Fitting Decision Tree Regression to the dataset
-from sklearn.tree import DecisionTreeRegressor
 regressor = DecisionTreeRegressor(random_state = 0)
 regressor.fit(X, y)
 
@@ -53,15 +42,15 @@ plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
 
+
 """
 
-We have to rise red flag because Decision Tree algorithm splits the data in rectangular forms in case of two or more variable. 
+We have to rise the red flag because Decision Tree algorithm splits the data in rectangular forms in case of two or more variable. 
 Since we have here one independent variable algorithm uses intervals.
 Form the graph it's clear that algorithm uses either infinite intervals or there is other problem.
 We don't have first problem, because it impossible to use infinite interval between two points,
 so we have another problem.
 The problem here is that the Decision Tree algorithm in not continuous.
-
 
 """
 

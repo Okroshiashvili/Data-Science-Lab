@@ -1,9 +1,3 @@
-"""
-Created on Tue Jun 26 2018
-
-@author: Nodar Okroshiashvili
-"""
-
 
 
 
@@ -30,6 +24,7 @@ Y = np.array(df['wage'])
 X = np.array(df.iloc[:,[0,1,2,3,4,5,6]])
 # Insert ones to estimate constant term
 X = np.insert(X,0,np.ones(935),axis=1)
+
 """
 Without intercept or constant term we force model to go through the origin
 

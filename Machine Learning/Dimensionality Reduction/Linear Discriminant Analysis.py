@@ -1,10 +1,3 @@
-"""
-Created on Tue Mar 27 2018
-
-@author: Nodar Okroshiashvili
-"""
-
-
 
 
 
@@ -19,13 +12,16 @@ Linear Discriminant Analysis
 # Pre-processing of data
 
 
-# Importing the libraries
-import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+import numpy as np
 import pandas as pd
 
-
-
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 # Importing the dataset
 dataset = pd.read_csv('data/Wine.csv')
@@ -37,16 +33,11 @@ X = dataset.iloc[:, 0:13].values
 y = dataset.iloc[:, 13].values
 
 
-
-from sklearn.model_selection import train_test_split
-
 # Splitting the dataset into the Training set and Test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
 
-
 # Feature Scaling
-from sklearn.preprocessing import StandardScaler
 
 # Define scaler object
 sc_X = StandardScaler()
@@ -63,8 +54,6 @@ Applying LDA
 
 """
 
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
-
 
 # Create class object
 lda = LDA(n_components = 2)
@@ -77,8 +66,6 @@ X_test = lda.transform(X_test)
 
 
 
-
-
 """
 Fitting Logistic Regression Model
 
@@ -87,37 +74,22 @@ Fitting Logistic Regression Model
 
 # Fitting Logistic Regression to the Training set
 
-from sklearn.linear_model import LogisticRegression
-
 # Define classifier object
 classifier = LogisticRegression(random_state = 0)
-
 
 # Fit the model
 classifier.fit(X_train, y_train)
 
-
-
-
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
 
-
-
-
-# Make the Confusion Matrix
-from sklearn.metrics import confusion_matrix
 
 # Create confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 
 
 
-
-
 # Visualizing the Training set results
-
-from matplotlib.colors import ListedColormap
 
 # Re-define variables
 X_set, y_set = X_train, y_train
@@ -142,8 +114,6 @@ plt.show()
 
 
 # Visualizing the Test set results
-
-from matplotlib.colors import ListedColormap
 
 # Re-define variables
 X_set, y_set = X_test, y_test

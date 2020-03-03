@@ -1,11 +1,3 @@
-"""
-Created on Sun May 19 2019
-
-@author: Nodar Okroshiashvili
-"""
-
-
-
 
 
 
@@ -25,8 +17,6 @@ in any way.
 
 
 
-
-
 """
 Data link:
     https://www.kaggle.com/mathan/fifa-2018-match-statistics#FIFA%202018%20Statistics.csv
@@ -38,14 +28,15 @@ Data link:
 
 
 
-import pandas as pd
+import graphviz
+import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.model_selection import train_test_split
+import pandas as pd
+from pdpbox import get_dataset, info_plots, pdp
+from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-
-
-
 
 df = pd.read_csv('FIFA 2018 Statistics.csv')
 
@@ -66,17 +57,11 @@ tree_model = DecisionTreeClassifier(random_state=0, max_depth=5,
 
 
 
-
-
 # Let visualize the tree
-
-from sklearn import tree
-import graphviz
 
 tree_graph = tree.export_graphviz(tree_model, out_file=None, feature_names=feature_names)
 
 graphviz.Source(tree_graph)
-
 
 
 
@@ -85,9 +70,6 @@ graphviz.Source(tree_graph)
 Partial Dependence Plot
 
 """
-
-import matplotlib.pyplot as plt
-from pdpbox import pdp, get_dataset, info_plots
 
 
 # Create data to plot
@@ -142,8 +124,6 @@ for feat_name in base_features:
 
 
 
-
-
 # Another example
 
 
@@ -187,7 +167,6 @@ we interpret any model.
 
 
 
-
 ###           2D Partial Dependence Plots         ###
 
 
@@ -216,4 +195,5 @@ and they run a total distance close to 100km.
 If they score 0 goals, distance covered doesn't matter.
 
 """
+
 

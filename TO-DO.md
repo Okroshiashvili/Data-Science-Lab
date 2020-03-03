@@ -13,9 +13,12 @@ Based on MoSCoW principle
 ## Should haves
 
 * Add more data structures and algorithms
+* Convert ```.py``` files into ```Jupyter Notebooks``` where possible
 
 ## Could haves
 
 * Add some web scraping scripts
 
 ## Would haves
+
+* Python Standard Library

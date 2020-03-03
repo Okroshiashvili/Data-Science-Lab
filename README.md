@@ -12,3 +12,5 @@ I tried to be as detailed as possible, but surely, some googling will also help.
 
 You can clone the repository and in your favorite IDE set the working directory to that folder.
 Data sets are in each folder, except for Convolutional Neural Networks, for which you can download data from provided link in the code file. I left the data folder and some pictures in it for guidance on how to prepare data folder for CNN. These are really toy data sets, just for learning purposes. I do hope it will make a difference.
+
+# Table of Content

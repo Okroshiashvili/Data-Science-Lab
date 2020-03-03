@@ -1,21 +1,13 @@
-"""
-Created on Fri Apr 20 2018
-
-@author: Nodar Okroshiashvili
-
-"""
 
 
 
-
-# Importing the libraries
-
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
-
-
-
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 
 # Importing the dataset
 
@@ -27,11 +19,10 @@ y = dataset.iloc[:, 3].values
 
 # Dealing with missing data
 
-from sklearn.preprocessing import Imputer
-
-imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
+imputer = SimpleImputer(missing_values = np.nan, strategy = 'mean')
 
 imputer = imputer.fit(X[:, 1:3])
+
 X[:, 1:3] = imputer.transform(X[:, 1:3])
 
 """
@@ -40,12 +31,8 @@ Here missing value are denoted as NaN, and we use sample mean to extrapolate mis
 """
 
 
-
-
 # Encoding categorical data
 # Encoding the Independent Variable
-
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 """
 We see here that we have three categories in country column.
@@ -61,9 +48,8 @@ labelencoder_X = LabelEncoder()
 X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
 
 # Creates dummy variables for country
-onehotencoder = OneHotEncoder(categorical_features = [0])
-X = onehotencoder.fit_transform(X).toarray()
-
+ct = ColumnTransformer([("Country", OneHotEncoder(), [0])], remainder = 'passthrough')
+X = ct.fit_transform(X)
 
 # Encoding the Dependent Variable
 # Dependent variable is binary yes/no and labelencoder converts it to numeric value
@@ -74,12 +60,7 @@ y = labelencoder_y.fit_transform(y)
 
 
 # Split dataset into Training set and Test set
-from sklearn.model_selection import train_test_split
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
-
-
-
 
 
 # Feature scaling
@@ -97,7 +78,6 @@ For the training set use Fit and Transform, whereas for the test set use only Tr
 
 
 """
-from sklearn.preprocessing import StandardScaler
 
 sc_X = StandardScaler()
 
@@ -109,9 +89,6 @@ y_train = y_train.reshape(-1,1)
 y_train = sc_y.fit_transform(y_train)
 
 
-
-
-
 """
 
 Please, note that the complexity of preprocessing and steps to do
@@ -119,6 +96,4 @@ in this level is directly proportional to the how messy the data set is.
 Generally, 80% of effort is needed to clean the data and 20% is enough to build the model
 
 """
-
-
 
